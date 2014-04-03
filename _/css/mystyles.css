@@ -1,0 +1,16 @@
+
+
+.putColor{
+background-color: blue;
+width: 40%;
+margin: 30%;
+text-align: center;
+}
+
+
+.main-container{
+width: 95%;
+background-color: yellow;
+height: 90%;
+padding: 10%;
+}

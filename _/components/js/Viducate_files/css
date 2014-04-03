@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Julius Sans One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Julius Sans One'), local('JuliusSansOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/juliussansone/v2/iU65JP9acQHPDLkdalCF7gaS65eljNVkG0R6HbhLwtY.woff) format('woff');
+}
