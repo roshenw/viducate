@@ -1,17 +1,23 @@
 
 <?php
        ini_set('display_errors', 'On');
-       echo "<h1> Hello1 </h1>";
+
        $db = "w4111g.cs.columbia.edu:1521/adb";
-       $conn = oci_connect("rw2485", "Data132", $db);
+
+
+      if (!($conn = oci_connect("rw2485", "Data132", $db))){
+            echo "Connection cannot be established";
+      }
        $stmt = oci_parse($conn, "select * from Departments");
-       
        oci_execute($stmt, OCI_DEFAULT);
-       echo "<h1> Hello </h1>";
+       
        while ($res = oci_fetch_row($stmt))
        {
           echo "User Name: ". $res[0] ;
        }
+
+
+      
   
 ?>
 
@@ -37,7 +43,7 @@
     <!-- <div class="col-lg-5 col-lg-offset-4  putColor"> -->
     <div class="main-container">
     <div class="putColor">
-    <h1 class="font-color">Viducate!</h1>
+    <h1 class="font-color">Viducate</h1>
     <div class="">
  	  	<div class="navbar">
     		<ul class="nav navbar-nav navbar-position">
