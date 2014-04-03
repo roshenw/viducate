@@ -1,3 +1,27 @@
+
+<?php
+       ini_set('display_errors', 'On');
+       echo "<h1> Hello1 </h1>";
+       $db = "w4111g.cs.columbia.edu:1521/adb";
+       $conn = oci_connect("rw2485", "Data132", $db);
+       $stmt = oci_parse($conn, "select * from Departments");
+       
+       oci_execute($stmt, OCI_DEFAULT);
+       echo "<h1> Hello </h1>";
+       while ($res = oci_fetch_row($stmt))
+       {
+          echo "User Name: ". $res[0] ;
+       }
+  
+?>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
