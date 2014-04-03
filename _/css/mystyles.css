@@ -1,7 +1,7 @@
 
 
 .putColor{
-background-color: blue;
+background-color:;
 width: 40%;
 margin: 30%;
 text-align: center;
@@ -9,8 +9,20 @@ text-align: center;
 
 
 .main-container{
-width: 95%;
-background-color: yellow;
+width: 100%;
+background-color: currentcolor;
 height: 90%;
 padding: 10%;
+}
+
+.font-color{
+ color: azure;
+}
+
+.navbar-position{
+	position: relative;
+	left: 25%;
+}
+.searchbar-position{
+	width: 400px;
 }
