@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://localhost:8888/hello/index.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Donate Me</title>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="./Donate Me_files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://localhost:8888/hello/css/normalize.css">
+    <link rel="stylesheet" href="http://localhost:8888/hello/css/jquery.sidr.light.css">
+    <link rel="stylesheet" href="http://localhost:8888/hello/css/animate.min.css">
+    <link rel="stylesheet" href="http://localhost:8888/hello/css/md-slider.css">
+    <link rel="stylesheet" href="http://localhost:8888/hello/css/style.css">
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" href="css/ie7.css"/>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/ie8.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="http://localhost:8888/hello/css/responsive.css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <![endif]-->
+    <script id="facebook-jssdk" async="" src="./Donate Me_files/all.js"></script><script type="text/javascript" src="./Donate Me_files/raphael-min.js"></script>
+    <script type="text/javascript" src="./Donate Me_files/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./Donate Me_files/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./Donate Me_files/jquery.touchwipe.min.js"></script>
+    <script type="text/javascript" src="./Donate Me_files/md_slider.min.js"></script>
+    <script type="text/javascript" src="./Donate Me_files/jquery.sidr.min.js"></script>
+    <script type="text/javascript" src="./Donate Me_files/jquery.tweet.min.js"></script>
+    <script type="text/javascript" src="./Donate Me_files/pie.js"></script>
+    <script type="text/javascript" src="./Donate Me_files/script.js"></script>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+<body>
+<div id="wrapper">
+
+    <header id="header">
+        <div class="wrap-top-menu">
+            <div class="container_12 clearfix container-12-add-color">
+                <div class="grid_12">
+                    <nav class="top-menu">
+                        <ul id="main-menu" class="nav nav-horizontal clearfix">
+                            <li class="active"><a href="./Donate Me_files/Donate Me.html">Home</a></li>
+                            <li class="sep"></li>
+                          
+
+
+                          <!--  <li><a href="all-pages.html">All Pages</a></li>
+                            <li class="sep"></li>
+                            <li><a href="how-it-work.html">Help</a></li>
+                            <li class="sep"></li>  
+                            <li><a href="contact.html">Contact</a></li> -->
+                            <li>This is site in development and not fully functional, but we would love to get your feed back at info@donateme.org</li>
+                        </ul>
+                        <a id="btn-toogle-menu" class="btn-toogle-menu" href="http://localhost:8888/hello/index.php#alternate-menu">
+                            <span class="line-bar"></span>
+                            <span class="line-bar"></span>
+                            <span class="line-bar"></span>
+                        </a>
+                        <div id="right-menu">
+                            <ul class="alternate-menu">
+                                <li><a href="./Donate Me_files/Donate Me.html">Home</a></li>
+                                <li><a href="http://localhost:8888/hello/all-pages.html">All Pages</a></li>
+                                <li><a href="http://localhost:8888/hello/how-it-work.html">Help</a></li>
+                                <li><a href="http://localhost:8888/hello/contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="top-message clearfix">
+                        <i class="icon iFolder"></i>
+                        <span class="txt-message">Logged in as </span>
+                        <i class="icon iX"></i>
+                        <div class="clear"></div>
+                    </div>
+                
+                    <i id="sys_btn_toggle_search" class="icon iBtnRed make-right"></i>
+                </div>
+            </div>
+        </div><!-- end: .wrap-top-menu -->
+        <div class="container_12 clearfix">
+            <div class="grid_12 header-content">
+                <div id="sys_header_right" class="header-right">
+                    <div class="account-panel">
+                      <a href="http://localhost:8888/hello/index.php#" class="btn btn-red sys_show_popup_login">Register</a>
+                        <a href="http://localhost:8888/hello/index.php#" class="btn btn-black sys_show_popup_login">Login</a>
+                    </div>
+                    <div class="form-search">
+                        <form action="http://localhost:8888/hello/index.php#">
+                            <label for="sys_txt_keyword">
+                                <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Search projects">
+                            </label>
+                            <button class="btn-search" type="reset"><i class="icon iMagnifier"></i></button>
+                            <button class="btn-reset-keyword" type="reset"><i class="icon iXHover"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <h1 id="logo">
+                        <a href="./Donate Me_files/Donate Me.html"><img src="./Donate Me_files/logo.png" alt="$SITE_NAME"></a>
+                    </h1>
+                    <div class="main-nav clearfix">
+                        <div class="nav-item">
+                            <a href="http://localhost:8888/hello/category.html" class="nav-title">Discover</a>
+                            <p class="rs nav-description">Great Students</p>
+                        </div>
+                        <span class="sep"></span>
+                        <div class="nav-item">
+                            <a href="http://localhost:8888/hello/contact.php" class="nav-title">Start</a>
+                            <p class="rs nav-description">Your Project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><!--end: #header --> <!-- Include header -->
+   
+    <div id="home-slider">
+        <div class="md-slide-wrap md-slide-responsive md-slide-fullwidth md-slide-bullet-2" style="height: 365px;"><div class="md-item-wrap"><div class="md-slide-items md-slider" id="md-slider-1" data-thumb-width="105" data-thumb-height="70">
+			<div class="md-slide-item slide-0" data-timeout="6000" style="left: 0px; top: 0px; opacity: 1; height: 365px;">
+				<div class="md-mainimg"><img src="./Donate Me_files/th-slide0.jpg" alt="" style="width: 100%; height: auto; top: -89.3310546875px; left: 0px;"></div>
+				<div class="md-objects" style="width: 980px; font-size: 99%;">
+
+					<div class="md-object rs slide-title slide-with-background fadeInRight" data-x="20" data-y="38" data-width="490" data-height="30" data-start="700" data-stop="5500" data-easein="random" data-easeout="keep" style="width: 50%; height: 8.21917808219178%; top: 10.41095890410959%; left: 2.0408163265306123%; display: block;">
+						<p class="slide-with-background">Cant find scholorships to cover your full tuition?</p>
+					</div>
+
+
+
+					<!--<div class="md-object rs slide-description slide-with-background" data-x="20" data-y="160" data-width="480" data-height="90" data-start="1400" data-stop="7500" data-easein="random" data-easeout="keep">
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient monte.</p>   
+					</div>  -->
+					<div class="md-object rs rotateInDownRight" data-x="20" data-y="260" data-width="120" data-height="23" data-padding-top="9" data-padding-bottom="7" data-padding-left="10" data-padding-right="10" data-start="1800" data-stop="7500" data-easein="random" data-easeout="keep" style="width: 12.244897959183673%; height: 6.301369863013699%; top: 71.23287671232876%; left: 2.0408163265306123%; padding: 9px 10px 7px; display: block;">
+					<!--	<a href="#" class="btn btn-gray">Learn more</a> -->
+					</div>
+					<!--<div class="md-object" data-x="495" data-y="0" data-width="612" data-height="365" data-start="1800" data-stop="7500" data-easein="fadeInRight" data-easeout="keep" style=""><img src="images/ex/th-slide-man.png" alt="Search Money for Your Creative Ideas" width="612" height="365" /></div>  -->
+				</div>
+			</div>
+			<div class="md-slide-item slide-1" data-timeout="6000" style="display: none; height: 365px;">
+				<div class="md-mainimg"><img src="./Donate Me_files/th-slide1.jpg" alt="" style="width: 100%; height: auto; top: -39.613037109375px; left: 0px;"></div>
+				<div class="md-objects slide-with-background" style="width: 980px; font-size: 99%;">
+					<div class="md-object rs slide-title" data-x="20" data-y="188" data-width="390" data-height="30" data-start="700" data-stop="5500" data-easein="random" data-easeout="random" style="width: 39.795918367346935%; height: 8.21917808219178%; top: 51.50684931506849%; left: 2.0408163265306123%; display: none;">
+						<p>A place reserved for Intelligent Students</p>
+					</div>
+					<div class="md-object rs slide-description2 " data-x="20" data-y="250" data-width="390" data-height="100" data-start="1400" data-stop="4500" data-easein="random" data-easeout="random" style="width: 39.795918367346935%; height: 27.397260273972602%; top: 68.4931506849315%; left: 2.0408163265306123%; display: none;">
+						<!--<p>Mauris volutpat, lectus vitae pretium sagittis, turpis augue euismod libero</p>  -->
+					</div>  <!--
+					<div class="md-object" data-x="454" data-y="44" data-width="327" data-height="268" data-start="1000" data-stop="5500" data-easein="random" data-easeout="random" style=""><img src="images/ex/slide1_1.png" alt="Responsive" width="327" height="268" /></div>
+					<div class="md-object" data-x="628" data-y="142" data-width="298" data-height="176" data-start="1600" data-stop="5100" data-easein="random" data-easeout="random" style=""><img src="images/ex/slide1_2.png" alt="Responsive" width="298" height="176" /></div>
+					<div class="md-object" data-x="837" data-y="169" data-width="119" data-height="149" data-start="2200" data-stop="4800" data-easein="random" data-easeout="random" style=""><img src="images/ex/slide1_3.png" alt="Responsive" width="119" height="149" /></div>
+					<div class="md-object" data-x="809" data-y="208" data-width="59" data-height="114" data-start="2800" data-stop="4500" data-easein="random" data-easeout="random" style=""><img src="images/ex/slide1_4.png" alt="Responsive" width="59" height="114" /></div>
+                -->
+				</div>
+			</div>
+			<div class="md-slide-item slide-2" data-timeout="4000" style="display: none; height: 365px;">
+				<div class="md-mainimg"><img src="./Donate Me_files/th-slide2.jpg" alt="" style="width: 100%; height: auto; top: -75.79833984375px; left: 0px;"></div>
+				<div class="md-objects" style="width: 980px; font-size: 99%;">
+					<div class="md-object slide-with-background" data-x="20" data-y="58" data-width="500" data-height="170" data-padding-top="30" data-padding-bottom="30" data-padding-left="35" data-padding-right="35" data-start="300" data-stop="3600" data-easein="random" data-easeout="keep" style="width: 51.02040816326531%; height: 46.57534246575342%; top: 15.890410958904111%; left: 2.0408163265306123%; display: none; padding: 30px 35px;">
+						<h2 class="rs slide-title">Gift Of Education</h2>
+						<p class="rs slide-description2">Help high perfoming students to make their college dream a reality. Donate me give you the power to help students in you area and hopefully students who went to the same college
+                        </p>
+					</div>
+				</div>
+			</div>
+		</div><div class="md-arrow" style="opacity:0;"><div class="md-arrow-left"><span></span></div><div class="md-arrow-right"><span></span></div></div></div><div class="md-bullets" style="left: 112.5px; right: 112.5px;"><div class="md-bullet md-current" rel="0"><a></a></div><div class="md-bullet" rel="1"><a></a></div><div class="md-bullet" rel="2"><a></a></div></div></div>
+    </div><!--end: #home-slider -->  <!-- main slider include -->
+   
+
+    <div class="home-feature-category">
+        <div class="container_12 clearfix">
+            <div class="grid_4 left-lst-category">
+                <div class="wrap-lst-category">
+                    <h3 class="title-welcome rs">Welcome to Donate Me</h3>
+                    <p class="description rs">Find students in a specific geoprahy, universtiy, or studying a certain major</p>
+                    <nav class="lst-category">
+                        <ul class="rs nav nav-category">
+                            <li>
+                                <a href="http://localhost:8888/hello/index.php#">
+                                    New york
+                                    <span class="count-val">(12)</span>
+                                    <i class="icon iPlugGray"></i>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="http://localhost:8888/hello/index.php#">
+                                    New Jersey
+                                    <span class="count-val">(12)</span>
+                                    <i class="icon iPlugGray"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:8888/hello/index.php#">
+                                    California
+                                    <span class="count-val">(12)</span>
+                                    <i class="icon iPlugGray"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:8888/hello/index.php#">
+                                    Texas 
+                                    <span class="count-val">(12)</span>
+                                    <i class="icon iPlugGray"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:8888/hello/index.php#">
+                                    Physics
+                                    <span class="count-val">(12)</span>
+                                    <i class="icon iPlugGray"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:8888/hello/index.php#">
+                                    Computer Science
+                                    <span class="count-val">(12)</span>
+                                    <i class="icon iPlugGray"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:8888/hello/index.php#">
+                                    Art
+                                    <span class="count-val">(12)</span>
+                                    <i class="icon iPlugGray"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="rs view-all-category">
+                            <a href="http://localhost:8888/hello/category.html" class="be-fc-orange">+ View all categories</a>
+                        </p>
+                    </nav><!--end: .lst-category -->
+                </div>
+            </div><!--end: .left-lst-category -->
+            <div class="grid_8 marked-category">
+                <div class="wrap-title clearfix">
+                    <h2 class="title-mark rs">Staff Picks: <span class="fc-orange"> This Week</span></h2>
+                    <a href="http://localhost:8888/hello/category.html" class="count-project be-fc-orange">See all <span class="fw-b">24</span> Comics projects</a>
+                </div>
+                <div class="box-marked-project project-short">
+                    <div class="top-project-info">
+                        <div class="content-info-short clearfix">
+                            <a href="http://localhost:8888/hello/project.php?id=1" class="thumb-img">                                <img src="./Donate Me_files/th-552x411-3.jpg" style="width:100%;" border="0" alt="$TITLE">
+                            </a>
+                            <div class="wrap-short-detail">
+                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="http://localhost:8888/hello/project.php">Roshen  Weliwatta </a></h3>
+                                <p class="rs tiny-desc">in <a href="http://localhost:8888/hello/profile.html" class="fw-b fc-gray be-fc-orange"></a>Columbia University <span class="fw-b fc-gray">New York, NY</span></p>
+                                <p class="rs title-description">Roshen just got accepted to Columbia University. He has a high school GPA of 3.98. He wants to major in Computer Science</p>
+                            </div>
+                            <p class="rs clearfix comment-view">
+                                <a href="http://localhost:8888/hello/project-1.html" class="fc-gray be-fc-orange">75 comments</a>
+                                <span class="sep">|</span>
+                                <a href="http://localhost:8888/hello/index.php#" class="fc-gray be-fc-orange">378 views</a>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                    <!--end: .top-project-info -->
+                    <div class="bottom-project-info clearfix">
+                        <div class="project-progress sys_circle_progress" data-percent="76">
+                            <div class="sys_holder_sector"><svg height="78" version="1.1" width="78" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.0625px; top: -0.9375px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="090-_cecece-_cecece" x1="0" y1="1" x2="0" y2="0" gradientTransform="matrix(1,0,0,1,0,0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#cecece" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#cecece" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient><lineargradient id="190-_ea503d-_ea503d" x1="0" y1="1" x2="0" y2="0" gradientTransform="matrix(1,0,0,1,0,0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#ea503d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#ea503d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><path fill="url(#090-_cecece-_cecece)" stroke="#cecece" d="M39,39L39,0A39,39,0,0,0,0.07695759129740765,36.55116973835679Z" opacity="1" fill-opacity="1" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></path><path fill="url(#190-_ea503d-_ea503d)" stroke="#cecece" d="M39,39L0.07695759129740765,36.55116973835679A39,39,0,1,0,39.000000000000014,0Z" opacity="1" fill-opacity="1" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></path></svg></div>
+                        <span class="val-progress">76%</span></div>
+                        <div class="group-fee clearfix">
+                            <div class="fee-item">
+                                <p class="rs lbl">Backers</p>
+                                <span class="val">270</span>
+                            </div>
+                            <div class="sep"></div>
+                            <div class="fee-item">
+                                <p class="rs lbl">Pledged</p>
+                                <span class="val">$38,000</span>
+                            </div>
+                            <div class="sep"></div>
+                            <div class="fee-item">
+                                <p class="rs lbl">Days Left</p>
+                                <span class="val">25</span>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div><!--end: .marked-category -->
+            <div class="clear"></div>
+        </div>
+    </div><!--end: .home-feature-category -->
+
+
+
+
+
+<!-- make a java script function that set the opecity to 50% -->
+
+    <div class="home-popular-project" style="background-color: #5c666b; max-height: 600px;">
+       <div width="835" height="500"><iframe id="ytplayer" width="60%" height="70%  " src="./Donate Me_files/Q6LalBOA4wY.html" frameborder="0" allowfullscreen="" style="   
+    /* padding: 5%; */
+    margin-top: 3%;
+    margin-bottom:3%;
+    margin-left: 20%;
+    margin-right: 380%;
+    border-width: 5px;
+    border-color: floralwhite;"></iframe> </div>
+    </div>  
+
+
+
+<!-- student profile loop on the home page -->
+    
+    
+
+
+    <div class="home-popular-project">
+        <div class="container_12">
+            <div class="grid_12 wrap-title">
+                <h2 class="common-title">Popular</h2>
+                <a class="be-fc-orange" href="http://localhost:8888/hello/category.html">View all</a>
+            </div>
+            <div class="clear"></div>
+            <div class="lst-popular-project clearfix">
+                
+
+
+    
+                    <div class="grid_3">
+                    <div class="project-short sml-thumb">
+                        <div class="top-project-info" style=" max-height: 325; min-height: 325;">
+                            <div class="content-info-short clearfix">
+                                <a href="http://localhost:8888/hello/project.php?id=1" class="thumb-img thumb-avatar">                                    <img src="./Donate Me_files/th-552x411-3.jpg" style="width:100%;" border="0" alt="$TITLE">
+                                </a>
+                                <div class="wrap-short-detail">
+                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="http://localhost:8888/hello/project.php">Roshen Weliwatta </a></h3>
+                                    <p class="rs tiny-desc">by <a href="http://localhost:8888/hello/profile.html" class="fw-b fc-gray be-fc-orange">Roshen</a></p>
+                                    <p class="rs title-description">Roshen just got accepted to Columbia University. He has a high school GPA of 3.98. He wants to major in Computer Science </p>
+                                    <p class="rs project-location">
+                                        <i class="icon iLocation"></i>
+                                        New York, NY
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-project-info clearfix">
+                            <div class="line-progress">
+                                <div class="bg-progress">
+                                    <span style="width: 50%"></span>
+                                </div>
+                            </div>
+                            <div class="group-fee clearfix">
+                                <div class="fee-item">
+                                    <p class="rs lbl">Funded</p>
+                                    <span class="val">50%</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Pledged</p>
+                                    <span class="val">$38,000</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Days Left</p>
+                                    <span class="val">25</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end: .grid_3 > .project-short-->
+
+                                                <div class="grid_3">
+                    <div class="project-short sml-thumb">
+                        <div class="top-project-info" style=" max-height: 325; min-height: 325;">
+                            <div class="content-info-short clearfix">
+                                <a href="http://localhost:8888/hello/project.php?id=2" class="thumb-img thumb-avatar">                                    <img src="./Donate Me_files/th-552x411-1.jpg" style="width:100%;" border="0" alt="$TITLE">
+                                </a>
+                                <div class="wrap-short-detail">
+                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="http://localhost:8888/hello/project.php">Ian  Davis </a></h3>
+                                    <p class="rs tiny-desc">by <a href="http://localhost:8888/hello/profile.html" class="fw-b fc-gray be-fc-orange">Ian </a></p>
+                                    <p class="rs title-description">You Can Make a Difference </p>
+                                    <p class="rs project-location">
+                                        <i class="icon iLocation"></i>
+                                        New York, NY
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-project-info clearfix">
+                            <div class="line-progress">
+                                <div class="bg-progress">
+                                    <span style="width: 50%"></span>
+                                </div>
+                            </div>
+                            <div class="group-fee clearfix">
+                                <div class="fee-item">
+                                    <p class="rs lbl">Funded</p>
+                                    <span class="val">50%</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Pledged</p>
+                                    <span class="val">$38,000</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Days Left</p>
+                                    <span class="val">25</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end: .grid_3 > .project-short-->
+
+                                                <div class="grid_3">
+                    <div class="project-short sml-thumb">
+                        <div class="top-project-info" style=" max-height: 325; min-height: 325;">
+                            <div class="content-info-short clearfix">
+                                <a href="http://localhost:8888/hello/project.php?id=3" class="thumb-img thumb-avatar">                                    <img src="./Donate Me_files/th-552x411-2.jpg" style="width:100%;" border="0" alt="$TITLE">
+                                </a>
+                                <div class="wrap-short-detail">
+                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="http://localhost:8888/hello/project.php">Maria  Dru</a></h3>
+                                    <p class="rs tiny-desc">by <a href="http://localhost:8888/hello/profile.html" class="fw-b fc-gray be-fc-orange">Maria </a></p>
+                                    <p class="rs title-description">For every Ruby Cup that you buy for yourself through this campaign, we give one to a girl in Kenya.  </p>
+                                    <p class="rs project-location">
+                                        <i class="icon iLocation"></i>
+                                        New York, NY
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-project-info clearfix">
+                            <div class="line-progress">
+                                <div class="bg-progress">
+                                    <span style="width: 50%"></span>
+                                </div>
+                            </div>
+                            <div class="group-fee clearfix">
+                                <div class="fee-item">
+                                    <p class="rs lbl">Funded</p>
+                                    <span class="val">50%</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Pledged</p>
+                                    <span class="val">$38,000</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Days Left</p>
+                                    <span class="val">25</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end: .grid_3 > .project-short-->
+
+                                                <div class="grid_3">
+                    <div class="project-short sml-thumb">
+                        <div class="top-project-info" style=" max-height: 325; min-height: 325;">
+                            <div class="content-info-short clearfix">
+                                <a href="http://localhost:8888/hello/project.php?id=4" class="thumb-img thumb-avatar">                                    <img src="./Donate Me_files/th-552x411-4.jpg" style="width:100%;" border="0" alt="$TITLE">
+                                </a>
+                                <div class="wrap-short-detail">
+                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="http://localhost:8888/hello/project.php">Yang  Lee</a></h3>
+                                    <p class="rs tiny-desc">by <a href="http://localhost:8888/hello/profile.html" class="fw-b fc-gray be-fc-orange">Yang</a></p>
+                                    <p class="rs title-description">Graduate Top of the class in my high school </p>
+                                    <p class="rs project-location">
+                                        <i class="icon iLocation"></i>
+                                        New York, NY
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-project-info clearfix">
+                            <div class="line-progress">
+                                <div class="bg-progress">
+                                    <span style="width: 50%"></span>
+                                </div>
+                            </div>
+                            <div class="group-fee clearfix">
+                                <div class="fee-item">
+                                    <p class="rs lbl">Funded</p>
+                                    <span class="val">50%</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Pledged</p>
+                                    <span class="val">$38,000</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Days Left</p>
+                                    <span class="val">25</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end: .grid_3 > .project-short-->
+
+                                <!-- student profile loop end -->
+
+    <div class="home-discover-friends">
+        <div class="container_12">
+            <div class="row-friends">
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-1.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-2.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-3.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-4.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-5.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-6.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-7.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-8.jpg" alt="$USER_NAME"></a>
+                <div class="clear"></div>
+            </div>
+            <div class="row-friends row-connect-fb">
+                <a class="thumb-avatar t-first" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-17.jpg" alt="$USER_NAME"></a>
+                <div class="connect-fb">
+                    <p class="rs description"> Discover Great Students you may like </p>
+                    <a href="http://localhost:8888/hello/index.php#" class="btn btn-fb">Connect With Facebook</a>
+                </div>
+                <a class="thumb-avatar t-last" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-1.jpg" alt="$USER_NAME"></a>
+                <div class="clear"></div>
+            </div>
+            <div class="row-friends">
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-9.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-10.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-11.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-12.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-13.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-14.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-15.jpg" alt="$USER_NAME"></a>
+                <a class="thumb-avatar" href="http://localhost:8888/hello/index.php#"><img src="./Donate Me_files/th-119x119-16.jpg" alt="$USER_NAME"></a>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div><!--end: .home-discover-friends -->
+
+    <div class="additional-info-line">
+        <div class="container_12">
+            <div class="grid_9">
+                <h2 class="rs title">Find out how we make your college dream happen</h2>
+                <p class="rs description">Duis placerat malesuada sapien, eu consequat mauris vestibulum vitae. Aliquam fermentum lorem ut leo ultricies semper. In sed ligula massa, vitae elementum mauris.</p>
+            </div>
+            <div class="grid_3 ta-r">
+                <a class="btn bigger btn-red" href="http://localhost:8888/hello/how-we-work.php">How we work</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div><!--end: .additional-info-line -->
+   
+
+     <footer id="footer">
+        <div class="container_12 main-footer">
+            <div class="grid_3 about-us">
+                <h3 class="rs title">About Us</h3>
+                <p class="rs description">We are a platform that allows intelligent students 
+                to find tuition to go the school of their choice </p>
+                <p class="rs email"><a class="fc-default  be-fc-orange" href="mailto:info@megadrupal.com">info@donateme.com</a></p>
+            </div><!--end: .contact-info -->
+            <div class="grid_3 recent-tweets">
+                <h3 class="rs title">Recent Tweets</h3>
+                <div class="lst-tweets" id="sys_lst_tweets"><p class="loading"></p><p class="rs ta-c fc-white">loading Twitter <br><img src="./Donate Me_files/ajax-loader.gif" alt="loading"></p><p></p></div>
+            </div><!--end: .recent-tweets -->
+            <div class="clear clear-2col"></div>
+            <div class="grid_3 email-newsletter">
+                <h3 class="rs title">Newsletter Signup</h3>
+                <div class="inner">
+                    <p class="rs description">We are currently building the site and conducting various tests. Give us your email and we will inform you of our progress</p>
+                    <form action="http://localhost:8888/hello/index.php#">
+                        <div class="form form-email">
+                            <label class="lbl" for="txt-email">
+                                <input id="txt-email" type="text" class="txt fill-width" placeholder="Enter your e-mail address">
+                            </label>
+                            <button class="btn btn-green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div><!--end: .email-newsletter -->
+            <div class="grid_3">
+                <h3 class="rs title">Discover &amp; Create</h3>
+                <div class="footer-menu">
+                    <ul class="rs">
+                        <li><a class="be-fc-orange" href="http://localhost:8888/hello/index.php#">Most sucessful projects</a></li>
+                        <li><a class="be-fc-orange" href="http://localhost:8888/hello/index.php#">Start a project</a></li>
+                        <li><a class="be-fc-orange" href="http://localhost:8888/hello/index.php#">Project Guidlines</a></li>
+                        <li><a class="be-fc-orange" href="http://localhost:8888/hello/index.php#">Press</a></li>
+                        <li><a class="be-fc-orange" href="http://localhost:8888/hello/index.php#">Stats</a></li>
+                    </ul>
+                    <ul class="rs">
+                        <li><a class="be-fc-orange" href="http://localhost:8888/hello/index.php#">Staff Picks</a></li>
+                        <li><a class="be-fc-orange" href="http://localhost:8888/hello/index.php#">Popular</a></li>
+                        <li><a class="be-fc-orange" href="http://localhost:8888/hello/index.php#">Recent</a></li>
+                        <li><a class="be-fc-orange" href="http://localhost:8888/hello/index.php#">Small Projects</a></li>
+                        <li><a class="be-fc-orange" href="http://localhost:8888/hello/index.php#">Most Funded</a></li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="copyright">
+            <div class="container_12">
+                <div class="grid_12">
+                    <a class="logo-footer" href="./Donate Me_files/Donate Me.html">Back to the Top ^</a>
+                    <p class="rs term-privacy">
+                        <a class="fw-b be-fc-orange" href="http://localhost:8888/hello/single.html">Terms &amp; Conditions</a>
+                        <span class="sep">/</span>
+                        <a class="fw-b be-fc-orange" href="http://localhost:8888/hello/single.html">Privacy Policy</a>
+                        <span class="sep">/</span>
+                        <a class="fw-b be-fc-orange" href="http://localhost:8888/hello/index.php#">FAQ</a>
+                    </p>
+                   <!-- <p class="rs ta-c fc-gray-dark site-copyright">HTML by <a href="http://megadrupal.com" title="Drupal Developers" target="_blank">MegaDrupal</a>. Designed by <a href="http://bestwebsoft.com/" title="Web development company" target="_blank">BestWebSoft</a>.    --><p></p> 
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </footer><!--end: #footer -->
+
+
+</div>
+
+<div class="popup-common" id="sys_popup_common">
+    <div class="overlay-bl-bg"></div>
+    <div class="container_12 pop-content">
+        <div class="grid_12 wrap-btn-close ta-r">
+            <i class="icon iBigX closePopup"></i>
+        </div>
+        <div class="grid_6 prefix_1">
+            <div class="form login-form">
+
+
+                <!-- form for login -->
+                <form action="http://localhost:8888/hello/processForm.php" method="post">
+                    <h3 class="rs title-form">Register</h3>
+                    <div class="box-white">
+                        <h4 class="rs title-box">New to Donate Me?</h4>
+                        <p class="rs">Create an account and launch you own scholorship fund </p>
+                        <div class="form-action">
+                            <label for="txt_name">
+                                <input id="txt_name" name="name" class="txt fill-width" type="text" placeholder="User Name">
+                            </label>
+                            <div class="wrap-2col clearfix">
+                                <div class="col">
+                                    <label for="txt_email">
+                                        <input id="txt_email" name="email" class="txt fill-width" type="email" placeholder="email address">
+                                    </label>
+                                    <label for="txt_re_email">
+                                        <input id="txt_re_email" class="txt fill-width" type="email" placeholder="Re-enter email adress">
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label for="txt_password">
+                                        <input id="txt_password" name="password" class="txt fill-width" type="password" placeholder="Enter password">
+                                    </label>
+                                    <label for="txt_re_password">
+                                        <input id="txt_re_password" class="txt fill-width" type="password" placeholder="Re-enter password">
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="rs pb10">By signing up, you agree to our <a href="http://localhost:8888/hello/index.php#" class="fc-orange">terms of use</a> and <a href="http://localhost:8888/hello/index.php#" class="fc-orange">privacy policy</a>.</p>
+                            <p class="rs ta-c">
+                                    <button class="btn btn-red btn-submit" name="register" type="submit">Register</button>  
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+
+        <!-- long in form ends -->
+
+
+
+
+
+        <div class="grid_4">
+            <div class="form login-form">
+                <form action="http://localhost:8888/hello/index.php#">
+                    <h3 class="rs title-form">Login</h3>
+                    <div class="box-white">
+                        <h4 class="rs title-box">Already Have an Account?</h4>
+                        <p class="rs">Please log in to continue.</p>
+                        <div class="form-action">
+                            <label for="txt_email_login">
+                                <input id="txt_email_login" class="txt fill-width" type="email" placeholder="Enter your e-mail address">
+                            </label>
+                            <label for="txt_password_login">
+                                <input id="txt_password_login" class="txt fill-width" type="password" placeholder="Enter password">
+                            </label>
+
+                            <label for="chk_remember" class="rs pb20 clearfix">
+                                <input id="chk_remember" type="checkbox" class="chk-remember">
+                                <span class="lbl-remember">Remember me</span>
+                            </label>
+                            <p class="rs ta-c pb10">
+                                <button class="btn btn-red btn-submit" type="submit">Login</button>
+                            </p>
+                            <p class="rs ta-c">
+                                <a href="http://localhost:8888/hello/index.php#" class="fc-orange">I forgot my password</a>
+                            </p>
+
+                           <div style="padding-top: 17px; padding-left: 85; ">
+                                <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Donate Me_files/wTH8U0osOYl.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Donate Me_files/wTH8U0osOYl(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f387a929f" frameborder="0" allowtransparency="true" scrolling="no" src="./Donate Me_files/ping.html" style="display: none;"></iframe></div></div></div>
+<script>
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : 1436165743292876,
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow the server to access the session
+    xfbml      : true  // parse XFBML
+  });
+
+  // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
+  // for any authentication related change, such as login, logout or session refresh. This means that
+  // whenever someone who was previously logged out tries to log in again, the correct case below 
+  // will be handled. 
+  FB.Event.subscribe('auth.authResponseChange', function(response) {
+    // Here we specify what we do with the response anytime this event occurs. 
+    if (response.status === 'connected') {
+      // The response object is returned with a status field that lets the app know the current
+      // login status of the person. In this case, we're handling the situation where they 
+      // have logged in to the app.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // In this case, the person is logged into Facebook, but not into the app, so we call
+      // FB.login() to prompt them to do so. 
+      // In real-life usage, you wouldn't want to immediately prompt someone to login 
+      // like this, for two reasons:
+      // (1) JavaScript created popup windows are blocked by most browsers unless they 
+      // result from direct interaction from people using the app (such as a mouse click)
+      // (2) it is a bad experience to be continually prompted to login upon page load.
+      FB.login();
+    } else {
+      // In this case, the person is not logged into Facebook, so we call the login() 
+      // function to prompt them to do so. Note that at this stage there is no indication
+      // of whether they are logged into the app. If they aren't then they'll see the Login
+      // dialog right after they log in to Facebook. 
+      // The same caveats as above apply to the FB.login() call here.
+      FB.login();
+    }
+  });
+  };
+
+  // Load the SDK asynchronously
+  (function(d){
+   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement('script'); js.id = id; js.async = true;
+   js.src = "//connect.facebook.net/en_US/all.js";
+   ref.parentNode.insertBefore(js, ref);
+  }(document));
+
+  // Here we run a very simple test of the Graph API after login is successful. 
+  // This testAPI() function is only called in those cases. 
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Good to see you, ' + response.name + '.');
+    });
+  }
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses the JavaScript SDK to
+  present a graphical Login button that triggers the FB.login() function when clicked. -->
+
+
+
+
+<div class="fb-login-button fb_iframe_widget" data-max-rows="3" data-size="large" data-show-faces="false" data-auto-logout-link="false" login_text="Facebook" fb-xfbml-state="parsed" fb-iframe-plugin-query="app_id=1436165743292876&amp;auto_logout_link=false&amp;locale=en_US&amp;login_text=Facebook&amp;max_rows=3&amp;sdk=joey&amp;show_faces=false&amp;size=large"><span style="vertical-align: top; width: 0px; height: 0px;"><iframe name="f14d34fe4c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:login_button Facebook Social Plugin" src="about:blank" style="border: none; visibility: hidden;"></iframe></span></div>
+
+
+
+
+
+
+
+                            </div> 
+                            <!-- facebook login -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div> 
+<!-- end of login -->
+
+<script>
+  (function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+</script>
+
+</div></div></div><div id="alternate-menu" class="sidr left"><div class="sidr-inner">
+                            <ul class="sidr-class-alternate-menu">
+                                <li><a href="./Donate Me_files/Donate Me.html">Home</a></li>
+                                <li><a href="http://localhost:8888/hello/all-pages.html">All Pages</a></li>
+                                <li><a href="http://localhost:8888/hello/how-it-work.html">Help</a></li>
+                                <li><a href="http://localhost:8888/hello/contact.html">Contact us</a></li>
+                            </ul>
+                        </div></div></body></html>

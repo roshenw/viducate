@@ -14,43 +14,37 @@
 <body id="home" class="main-container">
 
 
-<div class="">
-    <div class="">
+<div class="" style="margrin:50%; padding:5%;">
+    
     <h1 class="font-color">Viducate</h1>
-    <div class="">
- 	  	<div class="navbar">
-    		<ul class="nav navbar-nav ">
-    			<li><a href="index.php" class="font-color">Home</a></li>
-    			<li class= "dropdown">
-    				<a href="#" class="dropdown-toggle font-color" data-toggle="dropdown">Departments <span class="caret"></span></a>
-    				<ul class="dropdown-menu font-color" role="menu" aria-labelledby="dropdownMenu">
-    					<li><a tabindex="-1" href="#">Art</a></li>
-  						<li><a tabindex="-1" href="#">Computer Science</a></li>
-  						<li><a tabindex="-1" href="#">Economics</a></li>
-						<li><a tabindex="-1" href="#">Math</a></li>
-						<li><a tabindex="-1" href="#">Physics</a></li>			
-    				</ul>
-    			</li>
-    			<li>
-    				<div class="col-xs-5 col-sm-10 " sytle="background-color:red ;">
-        <form class="navbar-form" role="search">
-          <div class="input-group searchbar-position">
-            <input type="text" class="form-control" placeholder="Search by subject, topic" name="srch-term" id="srch-term">
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-            </div>
-          </div>
-        </form>
-     </div>
+    
+ 	  	 <div class="navbar">
+        <ul class="nav navbar-nav navbar-position" style="margin-left:0%;" >
+          <li><a href="index.php" class="font-color">Home</a></li>
+          <li class= "dropdown">
+            <a href="#" class="dropdown-toggle font-color" data-toggle="dropdown">Departments <span class="caret"></span></a>
+            <ul class="dropdown-menu font-color" role="menu" aria-labelledby="dropdownMenu">
+              <li><a tabindex="-1" href="#">Art</a></li>
+              <li><a tabindex="-1" href="#">Computer Science</a></li>
+              <li><a tabindex="-1" href="#">Economics</a></li>
+            <li><a tabindex="-1" href="#">Math</a></li>
+            <li><a tabindex="-1" href="#">Physics</a></li>      
+            </ul>
+          </li>
+        </ul>
+    
+           
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search Subject, Topic ..">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form>
     			</li>
     		</ul>
 		</div>
-  </div>  
-
+  </div>
     
-
-
-
 
 <div style ="padding:5%;">
 

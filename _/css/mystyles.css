@@ -1,24 +1,24 @@
 
 
-.putColor{
+body{ background-color: currentcolor;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.put-color{
 background-color:;
 width: 40%;
 margin: 30%;
 text-align: center;
 }
 
-
+/*
 .main-container{
 width: 100%;
 background-color: currentcolor;
 height: 90%;
 padding: 10%;
 }
-
-.font-color{
- color: azure;
-}
-
 .navbar-position{
 	position: relative;
 	left: 25%;
@@ -34,3 +34,17 @@ padding: 10%;
 	
 	margin-right: 70%;
 }
+*/
+li{ color: azure;}
+
+.logo{ margin-left: -29%;}
+.navbar-position{ margin-left: 10%;}
+
+table{
+	color: white;
+}
+	
+.font-color{
+ color: azure;
+}
+	
