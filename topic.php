@@ -10,7 +10,7 @@
 <body>
 <div class="" style="margrin:50%; padding:5%;">
     
-    <h1 class="font-color">Viducate</h1>
+    <h1 class="font-color"><a href="index.php">Viducate</a></h1>
     
  	  	 <div class="navbar">
         <ul class="nav navbar-nav navbar-position" style="margin-left:0%;	">
@@ -37,6 +37,22 @@
     			</li>
     		</ul>
 		</div>
+
+    <div class="" sytle="">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="tutorials.php" class="font-color">Differenctiation</a></li>
+          <li><a href="tutorials.php" class="font-color">Integration</a></li>
+          <li><a href="tutorials.php" class="font-color">Loptals Rule</a></li>
+          <li><a href="tutorials.php" class="font-color">Limits</a></li>
+          <li><a href="tutorials.php" class="font-color">Hello</a></li>
+          <li><a href="tutorials.php" class="font-color">Python</a></li>
+          <li><a href="tutorials.php" class="font-color">Introduction to substitution</a></li>
+          <li><a href="tutorials  .php" class="font-color">Calculus</a></li>
+            
+        </ul>
+    </div>
+
+
   </div>
 
 

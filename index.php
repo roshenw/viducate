@@ -35,7 +35,7 @@
 
 <div class="put-color main-container">   
      <div class="logo">
-    <h1 class="font-color" style="margin:5%;">Viducate</h1>
+      <h1 class="font-color" style="margin:5%";>Viducate</h1>
     </div>
     <div class="navbar">
         <ul class="nav navbar-nav navbar-position">
@@ -43,11 +43,11 @@
           <li class= "dropdown">
             <a href="#" class="dropdown-toggle font-color" data-toggle="dropdown">Departments <span class="caret"></span></a>
             <ul class="dropdown-menu font-color" role="menu" aria-labelledby="dropdownMenu">
-              <li><a tabindex="-1" href="#">Art</a></li>
-              <li><a tabindex="-1" href="#">Computer Science</a></li>
-              <li><a tabindex="-1" href="#">Economics</a></li>
-            <li><a tabindex="-1" href="#">Math</a></li>
-            <li><a tabindex="-1" href="#">Physics</a></li>      
+             <li><a tabindex="-1" href="subject.php">Art</a></li>
+              <li><a tabindex="-1" href="subject.php">Computer Science</a></li>
+              <li><a tabindex="-1" href="subject.php">Economics</a></li>
+              <li><a tabindex="-1" href="subject.php">Math</a></li>
+              <li><a tabindex="-1" href="subject.php">Physics</a></li>     
             </ul>
           </li>
         </ul>

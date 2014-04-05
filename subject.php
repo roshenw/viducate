@@ -11,7 +11,7 @@
 
 <div class="" style="margrin:50%; padding:5%; padding-bottom:1%;">
     
-    <h1 class="font-color">Viducate</h1>
+    <h1 class="font-color"><a href="index.php">Viducate</a></h1>
     
  	  	 <div class="navbar">
         <ul class="nav navbar-nav navbar-position" style="margin-left:0%;	">
@@ -19,11 +19,11 @@
           <li class= "dropdown">
             <a href="#" class="dropdown-toggle font-color" data-toggle="dropdown">Departments <span class="caret"></span></a>
             <ul class="dropdown-menu font-color" role="menu" aria-labelledby="dropdownMenu">
-              <li><a tabindex="-1" href="#">Art</a></li>
-              <li><a tabindex="-1" href="#">Computer Science</a></li>
-              <li><a tabindex="-1" href="#">Economics</a></li>
-            <li><a tabindex="-1" href="#">Math</a></li>
-            <li><a tabindex="-1" href="#">Physics</a></li>      
+              <li><a tabindex="-1" href="subject.php">Art</a></li>
+              <li><a tabindex="-1" href="subject.php">Computer Science</a></li>
+              <li><a tabindex="-1" href="subject.php">Economics</a></li>
+              <li><a tabindex="-1" href="subject.php">Math</a></li>
+              <li><a tabindex="-1" href="subject.php">Physics</a></li>      
             </ul>
           </li>
         </ul>
@@ -49,13 +49,15 @@
   </div>
   <div class="" sytle="">
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="index.php" class="font-color">Calculus</a></li>
-          <li><a href="index.php" class="font-color">Calculus</a></li>
-          <li><a href="index.php" class="font-color">Calculus</a></li>
-          <li><a href="index.php" class="font-color">Calculus</a></li>
-          <li><a href="index.php" class="font-color">Calculus</a></li>
-          <li><a href="index.php" class="font-color">Calculus</a></li>
-          <li><a href="index.php" class="font-color">Calculus</a></li>
+          <li><a href="topic.php" class="font-color">Calculus</a></li>
+          <li><a href="topic.php" class="font-color">Calculus</a></li>
+          <li><a href="topic.php" class="font-color">Calculus</a></li>
+          <li><a href="topic.php" class="font-color">Calculus</a></li>
+          <li><a href="topic.php" class="font-color">Calculus</a></li>
+          <li><a href="topic.php" class="font-color">Calculus</a></li>
+          <li><a href="topic.php" class="font-color">Calculus</a></li>
+          <li><a href="topic.php" class="font-color">Calculus</a></li>
+          <li><a href="topic.php" class="font-color">Calculus</a></li>
           
         </ul>
     </div>
