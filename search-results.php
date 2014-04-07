@@ -16,7 +16,7 @@
 
 <div class="" style="margrin:50%; padding:5%;">
     
-<h1 class="font-color"><a href="index.php">Viducate</a></h1>    
+<h1 class="font-color"><a href="index.php" style="text-decoration:none;">Viducate</a></h1>    
  	  	 <div class="navbar">
         <ul class="nav navbar-nav navbar-position" style="margin-left:0%;" >
           <li><a href="index.php" class="font-color">Home</a></li>
@@ -37,7 +37,7 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search Subject, Topic ..">
         </div>
-        <button type="submit" class="btn btn-default">Search</button>
+        <button type="submit" class="btn btn-default"><a href="search-results.php">Search</a></button>
       </form>
     			</li>
     		</ul>
@@ -76,6 +76,7 @@
   <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
   <td>56126</td>
   </tr>
+</div>
 </table>
 <!-- end of table	 -->
 </div>

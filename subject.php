@@ -11,7 +11,7 @@
 
 <div class="" style="margrin:50%; padding:5%; padding-bottom:1%;">
     
-    <h1 class="font-color"><a href="index.php">Viducate</a></h1>
+    <h1 class="font-color nounderline"><a href="index.php">Viducate</a></h1>
     
  	  	 <div class="navbar">
         <ul class="nav navbar-nav navbar-position" style="margin-left:0%;	">

@@ -32,10 +32,14 @@
     <link href="_/css/mystyles.css" rel="stylesheet" media="screen">
   </head>
   <body  id="home">
-
-<div class="put-color main-container">   
+    <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%;">
+      <button type="button" class="btn btn-default">Log In</button>
+      <button type="button" class="btn btn-default">Sign up</button>
+    </div>
+  <div class="put-color main-container"> 
+        
      <div class="logo">
-      <h1 class="font-color" style="margin:5%";>Viducate</h1>
+      <h1 class="font-color nounderline" style="margin:5%";>Viducate  </h1>
     </div>
     <div class="navbar">
         <ul class="nav navbar-nav navbar-position">
@@ -57,7 +61,7 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search Subject, Topic ..">
         </div>
-        <button type="submit" class="btn btn-default">Search</button>
+        <button type="submit" class="btn btn-default"><a href="search-results.php">Search</a></button>
       </form>
 </div><!-- closing main navigation  -->
   

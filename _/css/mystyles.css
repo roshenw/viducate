@@ -50,4 +50,12 @@ table{
 .font-color{
  color: azure;
 }
-	
+
+a:link {color:white;}    /* unvisited link */
+a:visited {color:white;} /* visited link */
+a:hover {color:white;}   /* mouse over link */
+a:active {color:white;}  /* selected link */
+.nounderline a{
+	text-decorationnone;
+}
+
