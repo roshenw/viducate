@@ -15,29 +15,6 @@ text-align: center;
 
 .link-decoration{ text-decoration: none; }
 
-/*
-.main-container{
-width: 100%;
-background-color: currentcolor;
-height: 90%;
-padding: 10%;
-}
-.navbar-position{
-	position: relative;
-	left: 25%;
-}
-.searchbar-position{
-	width: 400px;
-}
-.vid-container{
-	width: 350px;
-	height: 230px;
-}
-.vid-container-views{
-	
-	margin-right: 70%;
-}
-*/
 li{ color: azure;}
 
 .logo{ margin-left: -29%;}
@@ -56,6 +33,6 @@ a:visited {color:white;} /* visited link */
 a:hover {color:white;}   /* mouse over link */
 a:active {color:white;}  /* selected link */
 .nounderline a{
-	text-decorationnone;
+	text-decoration:none;
 }
 

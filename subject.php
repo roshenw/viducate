@@ -1,3 +1,19 @@
+
+<?php
+       ini_set('display_errors', 'On');
+       $db = "w4111g.cs.columbia.edu:1521/adb";
+
+      if (!($conn = oci_connect("rw2485", "Data132", $db))){
+            echo "Connection cannot be established";
+      }
+      $subject = $_GET["id"];
+      $stmt = oci_parse($conn, "SELECT CourseName From Has_Course, Departments Where Departments.depname = '$subject' and Has_Course.depid = Departments.depid" );
+       oci_execute($stmt, OCI_DEFAULT);
+?>       
+  
+
+
+
 <html>
 <head>
 	<title>Viducate</title>
@@ -27,8 +43,7 @@
             </ul>
           </li>
         </ul>
-    
-           
+  
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search Subject, Topic ..">
@@ -40,25 +55,16 @@
 		</div>
   </div>
 
-  <div style =":%;">
-
-
+  <div style ="">
   <h1  style="color:white;">Subject Name</h1>
   <div class="table">
       <tr><td> <h3>Mathematics</h3></td> </tr>
   </div>
   <div class="" sytle="">
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="topic.php" class="font-color">Calculus</a></li>
-          <li><a href="topic.php" class="font-color">Calculus</a></li>
-          <li><a href="topic.php" class="font-color">Calculus</a></li>
-          <li><a href="topic.php" class="font-color">Calculus</a></li>
-          <li><a href="topic.php" class="font-color">Calculus</a></li>
-          <li><a href="topic.php" class="font-color">Calculus</a></li>
-          <li><a href="topic.php" class="font-color">Calculus</a></li>
-          <li><a href="topic.php" class="font-color">Calculus</a></li>
-          <li><a href="topic.php" class="font-color">Calculus</a></li>
-          
+        <?php  $i =0;
+         while ($courses = oci_fetch_row($stmt)){ 
+          echo "<li><a href=\"topic.php\" class=\"font-color\">". $courses[$i] ."</a></li>"; } $i++; ?>
         </ul>
     </div>
   

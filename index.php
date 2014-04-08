@@ -1,26 +1,14 @@
 
 <?php
-/*       ini_set('display_errors', 'On');
+       ini_set('display_errors', 'On');
 
        $db = "w4111g.cs.columbia.edu:1521/adb";
-
-
       if (!($conn = oci_connect("rw2485", "Data132", $db))){
             echo "Connection cannot be established";
       }
        $stmt = oci_parse($conn, "select * from Departments");
        oci_execute($stmt, OCI_DEFAULT);
-       
-       while ($res = oci_fetch_row($stmt))
-       {
-          echo "User Name: ". $res[0] ;
-       }
-
-
-*/
-  
-?>
-
+?>       
 
 <!DOCTYPE html>
 <html>
@@ -47,11 +35,17 @@
           <li class= "dropdown">
             <a href="#" class="dropdown-toggle font-color" data-toggle="dropdown">Departments <span class="caret"></span></a>
             <ul class="dropdown-menu font-color" role="menu" aria-labelledby="dropdownMenu">
-             <li><a tabindex="-1" href="subject.php">Art</a></li>
-              <li><a tabindex="-1" href="subject.php">Computer Science</a></li>
-              <li><a tabindex="-1" href="subject.php">Economics</a></li>
-              <li><a tabindex="-1" href="subject.php">Math</a></li>
-              <li><a tabindex="-1" href="subject.php">Physics</a></li>     
+
+              <?php  $dept="Art";?>  
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Art </a>
+                  <?php  $dept="Computer Science";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Computer Science</a>
+                  <?php  $dept="Math";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Math </a>
+                  <?php  $dept="Economics";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Economics </a>
+                  <?php  $dept="Calculus";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Calculus </a>
             </ul>
           </li>
         </ul>
