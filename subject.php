@@ -64,7 +64,7 @@
         <ul class="nav nav-pills nav-stacked">
         <?php  $i =0;
          while ($courses = oci_fetch_row($stmt)){ 
-          echo "<li><a href=\"topic.php\" class=\"font-color\">". $courses[$i] ."</a></li>"; } $i++; ?>
+          echo "<li><a  class=\"font-color\"   href=\"topic.php\">". $courses[$i] ."</a></li>"; } $i++; ?>
         </ul>
     </div>
   

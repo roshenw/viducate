@@ -5,8 +5,8 @@ body{ background-color: currentcolor;
 	margin-right: 10%;
 }
 
+
 .put-color{
-background-color:;
 width: 40%;
 margin: 30%;
 text-align: center;
@@ -34,5 +34,8 @@ a:hover {color:white;}   /* mouse over link */
 a:active {color:white;}  /* selected link */
 .nounderline a{
 	text-decoration:none;
+}
+p {
+	color: white;
 }
 

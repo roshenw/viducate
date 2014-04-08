@@ -1,3 +1,15 @@
+<?php
+       ini_set('display_errors', 'On');
+       $db = "w4111g.cs.columbia.edu:1521/adb";
+
+      if (!($conn = oci_connect("rw2485", "Data132", $db))){
+            echo "Connection cannot be established";
+      }
+      $topic = $_GET["id"];
+      echo "";
+      $stmt = oci_parse($conn, "SELECT * From Has_topic");
+       oci_execute($stmt, OCI_DEFAULT);
+?>       
 <html>
 <head>
 	<title>Viducate</title>
@@ -11,6 +23,13 @@
 <div class="" style="margrin:50%; padding:5%;">
     
     <h1 class="font-color"><a href="index.php">Viducate</a></h1>
+
+       <?php $i=0;
+        while($row = oci_fetch_row($stmt)){
+
+              echo $row[$i];
+              $i++;
+        }  ?>
     
  	  	 <div class="navbar">
         <ul class="nav navbar-nav navbar-position" style="margin-left:0%;	">

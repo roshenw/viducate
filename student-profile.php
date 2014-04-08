@@ -38,7 +38,53 @@
 		</div>
   </div>
 
+   <div style="width:305px; height:223px; margin-left:50px; margin-right:0px; boarder">
+            <h3 class= "font-color">Watch History</h3>
+        <tr style="width:305px;">
+          <td><p>Indroduction to Calculus</p></td>
+          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
+          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+          <td>13226</td>
+        </tr>
+        <tr>
+          <td><p>Indroduction to Calculus</p></td>
+          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
+          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+          <td>13226</td>
+        </tr>
+        <tr>
+          <td><p>Indroduction to Calculus</p></td>
+          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
+          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+          <td>13226</td>
+        </tr>
+        <tr>
+          <td><p>Indroduction to Calculus</p></td>
+          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
+          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+          <td>13226</td>
+        </tr>
+        <tr>
+          <td><p>Indroduction to Calculus</p></td>
+          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
+          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+          <td>13226</td>
+        </tr>
+        <tr>
+          <td><p>Indroduction to Calculus</p></td>
+          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
+          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+          <td>13226</td>
+        </tr>
+              </div>
+      <div  style="background-color:blue; width:305px; height:223px; margin-left:50px; float:right; margin-top:0px;"> 
 
-
+          <tr>
+            <td>Lopitals Rule</td>
+          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+          <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
+          <td>13226</td>
+        </tr>
+      </div>
 </body>
 </html>
