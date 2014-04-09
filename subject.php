@@ -48,11 +48,11 @@
           </li>
         </ul>
   
-      <form class="navbar-form navbar-left" role="search">
+     <form class="navbar-form navbar-left" method="get" action="search-results.php" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search Subject, Topic ..">
+          <input type="text" class="form-control" name="input1"placeholder="Search Subject, Topic ..">
         </div>
-        <button type="submit" class="btn btn-default">Search</button>
+        <button type="submit" name="search-botton" class="btn btn-default">Search</button>
       </form>
     			</li>
     		</ul>

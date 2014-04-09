@@ -58,11 +58,11 @@
         </ul>
     
            
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left" method="get" action="search-results.php" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search Subject, Topic ..">
+          <input type="text" class="form-control" name="input1"placeholder="Search Subject, Topic ..">
         </div>
-        <button type="submit" class="btn btn-default">Search</button>
+        <button type="submit" name="search-botton" class="btn btn-default">Search</button>
       </form>
     			</li>
     		</ul>
@@ -77,11 +77,12 @@
       <table class="table table-hover" style="color:white">          
           <?php  $i =0;
             while ($courses = oci_fetch_row($stmt)){   ?>
-          <tr>
-            <td><?php echo $courses[$i]; ?></td>
-            <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
-            <td>13226</td>
-          </tr>
+             <tr style="width:305px; ">
+                  <td><p><?php echo $courses[$i]; ?></p></td>
+                  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+                  <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
+                  <td>13226</td>
+                </tr>
           <?php } $i++; ?>
       </table>  
     </div>

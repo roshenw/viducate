@@ -11,10 +11,18 @@
       $stmt = oci_parse($conn, "SELECT username from students where studentemail ='$email'");
       oci_execute($stmt, OCI_DEFAULT);  
         $i=0;
+        $username= "";
          while ($profile = oci_fetch_row($stmt)){    
                echo $profile[$i];
                 $username = $profile[$i];
             }
+
+            if( empty($username)){
+
+              header("Location: login-user-not-found.php");
+              //die();
+            }
+
 
         //$student_id = oci_parse($conn, "SELECT StudentId from Students where studentemail = '$email'");
         $student_history = oci_parse($conn, "SELECT TutName From ((Select TutId
@@ -24,8 +32,22 @@
                                             (Select TutId, StudentId From Watched) T2 On T1.StudentId=T2.StudentId))X1
                                               Join
                                                 Taught_By X2 On X1.TutId=X2.TutId)");
-      oci_execute($student_history, OCI_DEFAULT);  
-      
+      oci_execute($student_history, OCI_DEFAULT);     
+
+
+
+    $student_liked = oci_parse($conn, "SELECT TutName
+                                      From ((Select TutId
+                                        From ((Select StudentId, StudentName
+                                          From Students
+                                          Where studentemail='$email') T1
+                                          Join
+                                          (Select TutId, StudentId
+                                            From Watched
+                                            Where Liked=1) T2 On T1.StudentId=T2.StudentId))X1
+                                        Join
+                                        Taught_By X2 On X1.TutId=X2.TutId)");
+      oci_execute($student_liked, OCI_DEFAULT);       
 ?>  
 
 
@@ -68,12 +90,12 @@
                   </ul>
               
                      
-                <form class="navbar-form navbar-left" role="search">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search Subject, Topic ..">
-                  </div>
-                    <button type="submit" class="btn btn-default">Search</button>
-                </form>
+               <form class="navbar-form navbar-left" method="get" action="search-results.php" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" name="input1"placeholder="Search Subject, Topic ..">
+        </div>
+        <button type="submit" name="search-botton" class="btn btn-default">Search</button>
+      </form>
     			       </li>
     		    </ul>
 		    </div>
@@ -95,13 +117,16 @@
             <?php $k+1;} ?>
               </div>
       <div  style="background-color:blue; width:305px; height:223px; margin-left:50px; float:right; margin-top:0px;"> 
-
-          <tr>
-            <td>Lopitals Rule</td>
-          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-          <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
-          <td>13226</td>
-        </tr>
+ <?php   $s=0;
+         while ($liked_history = oci_fetch_row($student_history)){    ?>
+                
+                <tr style="width:305px; ">
+                  <td><p><?php echo $liked_history[$k]; ?></p></td>
+                  <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
+                  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+                  <td>13226</td>
+                </tr>
+            <?php $s+1;} ?>
       </div>
 
       <script src="_/js/bootstrap.js"></script>
