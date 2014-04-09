@@ -102,9 +102,13 @@
     </div>
     <!-- end of navigation inculding search bar -->
 
-   <div style="width:305px; height:223px; margin-left:50px; margin-right:0px; boarder">
+   <div>
+     <table cellpadding="0" cellspacing="0" width="100%" border="1">
+       <tr>
+         <td cellwidth="50%;">
+   <!--<div style="width:305px; height:223px; margin-left:50px; margin-right:0px; boarder">-->
             <h3 class= "font-color">Watch History   </h3>
-
+            <table>
             <?php   $k=0;
          while ($watched_history = oci_fetch_row($student_history)){    ?>
                 
@@ -115,10 +119,16 @@
                   <td>13226</td>
                 </tr>
             <?php $k+1;} ?>
-              </div>
-      <div  style="background-color:blue; width:305px; height:223px; margin-left:50px; float:right; margin-top:0px;"> 
+            </table>
+    <!---</div>-->
+    </td>
+    <td>  
+
+    <!--<div  style="background-color:blue; width:305px; height:223px; margin-left:50px; valign="top" float:right; margin-top:0px;"> -->
+        <h3 class="front-color">Liked History</h3>
+        <table>
  <?php   $s=0;
-         while ($liked_history = oci_fetch_row($student_history)){    ?>
+         while ($liked_history = oci_fetch_row($student_liked)){    ?>
                 
                 <tr style="width:305px; ">
                   <td><p><?php echo $liked_history[$k]; ?></p></td>
@@ -127,7 +137,12 @@
                   <td>13226</td>
                 </tr>
             <?php $s+1;} ?>
-      </div>
+        </table>
+      <!-- </div> -->
+  </td>
+</tr>
+</table>
+</div>
 
       <script src="_/js/bootstrap.js"></script>
   <script src="_/js/myscript.js"></script>

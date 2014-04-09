@@ -8,24 +8,17 @@
       $tutorial = $_GET["tutorial"];
       
      $stmt = oci_parse($conn, "SELECT TutName From((Select TutId From Has_Tutorial
-  Where TopicId In (Select TopicId From Has_Topic Where TopicName= '". $tutorial ."')) T1
-  Join
-  Taught_By On T1.TutId=Taught_By.TutId)");
-      //$stmt = oci_parse($conn, "SELECT topicname From Has_topic, Has_Course 
-                                //Where Has_Course.coursename = '$topic' and Has_Course.courseid = Has_topic.courseid" );
-
+                                                    Where TopicId In 
+                                                            (Select TopicId From Has_Topic Where TopicName= '". $tutorial ."')) T1
+                               Join
+                              Taught_By On T1.TutId=Taught_By.TutId)");
        oci_execute($stmt, OCI_DEFAULT);
-
-       
-
-
-
 ?>  
 
 <html>
 <head>
 	<title>Viducate</title>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
     <link href="_/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="_/css/mystyles.css" rel="stylesheet" media="screen">
@@ -58,12 +51,12 @@
         </ul>
     
            
-      <form class="navbar-form navbar-left" method="get" action="search-results.php" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" name="input1"placeholder="Search Subject, Topic ..">
-        </div>
-        <button type="submit" name="search-botton" class="btn btn-default">Search</button>
-      </form>
+        <form class="navbar-form navbar-left" method="get" action="search-results.php" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" name="input1"placeholder="Search Subject, Topic ..">
+          </div>
+          <button type="submit" name="search-botton" class="btn btn-default">Search</button>
+         </form>
     			</li>
     		</ul>
 		</div>
@@ -87,9 +80,51 @@
       </table>  
     </div>
 
-  
+ 
 <!-- end of table  -->
 </div>
+
+<div class="btn-group " style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%; color:w">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add tutorial to to this topic</button>
+</div> 
+<!-- add new tutorial -->
+
+<form    method="get" action="tutorials.php">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add a New Tutorial</h4>
+      </div>
+      <div class="modal-body">
+          <div class="input-group">
+              <span class="input-group-addon">Tutorial</span>
+              <input type="text" class="form-control" name="tutorial-name" placeholder="Tutorial name">
+          </div>
+          <div class="input-group">
+              <span class="input-group-addon" style="width:6em;">Tag </span>
+              <input type="text" class="form-control" name ="tag"placeholder="Tag">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<?php 
+      $tutorial_name = $_GET["tutorial-name"];
+      $tag = $_GET["tag"];
+      
+     $add_tutorial = oci_parse($conn,"INSERT Into Taught_By Values ($TEACHERID, $TUTID$, $TUTNAME$, 0, ?)");
+       oci_execute($add_tutorial, OCI_DEFAULT);
+  
+ ?>
+
 
 <script src="_/js/bootstrap.js"></script>
   <script src="_/js/myscript.js"></script>

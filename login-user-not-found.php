@@ -32,7 +32,7 @@
     <div class="container" style= " width:600px; padding-top:10%;">
 
       <form class="form-signin put-color" role="form" method="get" action="student-profile.php"> 
-        <label class="checkbox">  User not found
+        <label class="checkbox font-color" >  User not found
           <!-- <input type="checkbox" style="color:white;"value="remember-me"> Remember me -->
         </label>
         <input type="email" class="form-control" name="email" placeholder="Email" required autofocus>
