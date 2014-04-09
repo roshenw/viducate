@@ -1,13 +1,13 @@
 
 <?php
-       ini_set('display_errors', 'On');
+/*       ini_set('display_errors', 'On');
 
        $db = "w4111g.cs.columbia.edu:1521/adb";
       if (!($conn = oci_connect("rw2485", "Data132", $db))){
             echo "Connection cannot be established";
       }
        $stmt = oci_parse($conn, "select * from Departments");
-       oci_execute($stmt, OCI_DEFAULT);
+       oci_execute($stmt, OCI_DEFAULT);  */
 ?>       
 
 <!DOCTYPE html>
@@ -21,8 +21,10 @@
   </head>
   <body  id="home">
     <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%;">
-      <button type="button" class="btn btn-default">Log In</button>
-      <button type="button" class="btn btn-default">Sign up</button>
+       
+      <button type="button" class="btn btn-default" onclick="location.href='login.php'">Log In</button>
+      <button type="button" class="btn btn-default"onclick="location.href='signup.php'" >Sign up</button>
+  
     </div>
   <div class="put-color main-container"> 
         
@@ -44,21 +46,22 @@
                 <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Math </a>
                   <?php  $dept="Economics";?>
                 <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Economics </a>
-                  <?php  $dept="Calculus";?>
-                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Calculus </a>
+                  <?php  $dept="Physics";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Physics </a>
             </ul>
           </li>
         </ul>
-    </div>
 
-      <form class="navbar-form navbar-left" role="search">
+
+      <form class="navbar-form navbar-left" method="get" action="search-results.php" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search Subject, Topic ..">
+          <input type="text" class="form-control" name="input1"placeholder="Search Subject, Topic ..">
         </div>
-        <button type="submit" class="btn btn-default"><a href="search-results.php">Search</a></button>
+        <button type="submit" name="search-botton" class="btn btn-default">Search</button>
       </form>
 </div><!-- closing main navigation  -->
   
+
 
     <script src="_/js/bootstrap.js"></script>
     <script src="_/js/myscript.js"></script>

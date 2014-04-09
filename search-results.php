@@ -2,6 +2,44 @@
 	$video_link = "R0EQg9vgbQw";
  ?>
 
+
+
+<?php
+       ini_set('display_errors', 'On');
+       $db = "w4111g.cs.columbia.edu:1521/adb";
+
+      if (!($conn = oci_connect("rw2485", "Data132", $db))){
+            echo "Connection cannot be established";
+      }
+
+
+      $search_string = $_GET["input1"];
+      $stmt = oci_parse($conn, "SELECT TutName
+From((
+Select TutId
+From(Select TutId
+From ((Select TagId
+  From Tags
+  Where TagName Like '%$search_string%') T1
+  Join
+  (Select *
+    From Linked_to_Tutorials) T2 On T1.TagId=T2.TagId)
+Union
+Select TutId
+From Taught_By
+Where TutName Like '%$search_string'))A
+Join
+Taught_By B On A.TutId=B.TutId)
+Order By Views Desc" );
+      oci_execute($stmt, OCI_DEFAULT);
+
+
+
+?>       
+  
+
+
+
 <html>
 <head>
 	<title>Viducate</title>
@@ -49,36 +87,30 @@
 
 
 <table class="table table-hover" style="color:white">
-	<h1  style="color:white;">Searched for  "Search String"</h1>
+	<h1  style="color:white;">Searched for  "<?php print_r($search_string); ?>" </h1>
 	<p  style="color:white; margin-left:90%; content-align:right;">Views</p>
   <tr>
   <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
   <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
   <td>13226</td>
   </tr>
-   <tr>
-  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-  <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
-  <td>54126</td>
-  </tr>
-   <tr>
-  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-  <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
-  <td>1526</td>
-  </tr>
-    <tr>
-  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-  <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
-  <td>95126</td>
-  </tr>
-   <tr>
-  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-  <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
-  <td>56126</td>
-  </tr>
-</div>
+          <?php  $i =0;
+            while ($courses = oci_fetch_row($stmt)){   ?>
+          <tr>
+            <td><?php echo $courses[$i]; ?></td>
+            <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
+            <td>13226</td>
+          </tr>
+          <?php } $i++; ?>
+    
+
 </table>
+
+</div>
 <!-- end of table	 -->
 </div>
+
+<script src="_/js/bootstrap.js"></script>
+<script src="_/js/myscript.js"></script>
 </body>
 </html>

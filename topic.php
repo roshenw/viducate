@@ -5,10 +5,10 @@
       if (!($conn = oci_connect("rw2485", "Data132", $db))){
             echo "Connection cannot be established";
       }
-      $topic = $_GET["id"];
-      echo "";
-      $stmt = oci_parse($conn, "SELECT * From Has_topic");
-       oci_execute($stmt, OCI_DEFAULT);
+      $topic = $_GET["topic"];
+      //$topic = "Calculus I";
+      $stmt = oci_parse($conn, "SELECT topicname From Has_topic, has_course where has_course.coursename = '$topic' and has_course.courseid = Has_topic.courseid");
+      oci_execute($stmt, OCI_DEFAULT);
 ?>       
 <html>
 <head>
@@ -23,14 +23,6 @@
 <div class="" style="margrin:50%; padding:5%;">
     
     <h1 class="font-color"><a href="index.php">Viducate</a></h1>
-
-       <?php $i=0;
-        while($row = oci_fetch_row($stmt)){
-
-              echo $row[$i];
-              $i++;
-        }  ?>
-    
  	  	 <div class="navbar">
         <ul class="nav navbar-nav navbar-position" style="margin-left:0%;	">
           <li><a href="index.php" class="font-color">Home</a></li>
@@ -45,7 +37,6 @@
             </ul>
           </li>
         </ul>
-    
            
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -58,23 +49,18 @@
 		</div>
 
     <div class="" sytle="">
+      <h3  style="color:white;">Topics in <?php  print_r($topic); ?></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="tutorials.php" class="font-color">Differenctiation</a></li>
-          <li><a href="tutorials.php" class="font-color">Integration</a></li>
-          <li><a href="tutorials.php" class="font-color">Loptals Rule</a></li>
-          <li><a href="tutorials.php" class="font-color">Limits</a></li>
-          <li><a href="tutorials.php" class="font-color">Hello</a></li>
-          <li><a href="tutorials.php" class="font-color">Python</a></li>
-          <li><a href="tutorials.php" class="font-color">Introduction to substitution</a></li>
-          <li><a href="tutorials  .php" class="font-color">Calculus</a></li>
-            
+           <?php $i=0;
+        while($row = oci_fetch_row($stmt)){
+              //if(isset($row[$i])){                                      
+              echo '<li><a  class="font-color" href="tutorials.php?tutorial='. $row[$i] .'">'. $row[$i] .'</a></li>';              
+              $i+1;
+        }?>      
         </ul>
     </div>
-
-
   </div>
-
-
-
+<script src="_/js/bootstrap.js"></script>
+  <script src="_/js/myscript.js"></script>
 </body>
 </html>

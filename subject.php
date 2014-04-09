@@ -2,15 +2,13 @@
 <?php
        ini_set('display_errors', 'On');
        $db = "w4111g.cs.columbia.edu:1521/adb";
-
       if (!($conn = oci_connect("rw2485", "Data132", $db))){
             echo "Connection cannot be established";
       }
       $subject = $_GET["id"];
       $stmt = oci_parse($conn, "SELECT CourseName From Has_Course, Departments Where Departments.depname = '$subject' and Has_Course.depid = Departments.depid" );
-       oci_execute($stmt, OCI_DEFAULT);
+      oci_execute($stmt, OCI_DEFAULT);
 ?>       
-  
 
 
 
@@ -56,21 +54,25 @@
   </div>
 
   <div style ="">
-  <h1  style="color:white;">Subject Name</h1>
+  <h3  style="color:white;">Sunjects in <?php  print_r($subject); ?></h3>
   <div class="table">
       <tr><td> <h3>Mathematics</h3></td> </tr>
   </div>
+  <?php  // unset($_GET["id"]); ?>
   <div class="" sytle="">
         <ul class="nav nav-pills nav-stacked">
         <?php  $i =0;
          while ($courses = oci_fetch_row($stmt)){ 
-          echo "<li><a  class=\"font-color\"   href=\"topic.php\">". $courses[$i] ."</a></li>"; } $i++; ?>
+          echo '<li><a  class="font-color" href="topic.php?topic='. $courses[$i] .'">' . $courses[$i] .' </a></li>'; } $i++; ?>
         </ul>
     </div>
+
   
 <!-- end of table  -->
 </div>
 
+<script src="_/js/bootstrap.js"></script>
+  <script src="_/js/myscript.js"></script>
 
 </body>
 </html>

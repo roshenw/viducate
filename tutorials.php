@@ -1,3 +1,27 @@
+<?php
+       ini_set('display_errors', 'On');
+       $db = "w4111g.cs.columbia.edu:1521/adb";
+
+      if (!($conn = oci_connect("rw2485", "Data132", $db))){
+            echo "Connection cannot be established";
+      }
+      $tutorial = $_GET["tutorial"];
+      
+     $stmt = oci_parse($conn, "SELECT TutName From((Select TutId From Has_Tutorial
+  Where TopicId In (Select TopicId From Has_Topic Where TopicName= '". $tutorial ."')) T1
+  Join
+  Taught_By On T1.TutId=Taught_By.TutId)");
+      //$stmt = oci_parse($conn, "SELECT topicname From Has_topic, Has_Course 
+                                //Where Has_Course.coursename = '$topic' and Has_Course.courseid = Has_topic.courseid" );
+
+       oci_execute($stmt, OCI_DEFAULT);
+
+       
+
+
+
+?>  
+
 <html>
 <head>
 	<title>Viducate</title>
@@ -38,8 +62,30 @@
     		</ul>
 		</div>
   </div>
+  <div style ="">
+  <h3  style="color:white;">Tutorials in <?php  print_r($tutorial); ?></h3>
+  <div class="table">
+  </div>
+  <div class="" sytle="">
 
+      <table class="table table-hover" style="color:white">          
+          <?php  $i =0;
+            while ($courses = oci_fetch_row($stmt)){   ?>
+          <tr>
+            <td><?php echo $courses[$i]; ?></td>
+            <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
+            <td>13226</td>
+          </tr>
+          <?php } $i++; ?>
+      </table>  
+    </div>
 
+  
+<!-- end of table  -->
+</div>
+
+<script src="_/js/bootstrap.js"></script>
+  <script src="_/js/myscript.js"></script>
 
 </body>
 </html>
