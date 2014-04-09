@@ -41,12 +41,18 @@
           <li><a href="index.php" class="font-color">Home</a></li>
           <li class= "dropdown">
             <a href="#" class="dropdown-toggle font-color" data-toggle="dropdown">Departments <span class="caret"></span></a>
-            <ul class="dropdown-menu font-color" role="menu" aria-labelledby="dropdownMenu">
-              <li><a tabindex="-1" href="#">Art</a></li>
-              <li><a tabindex="-1" href="#">Computer Science</a></li>
-              <li><a tabindex="-1" href="#">Economics</a></li>
-            <li><a tabindex="-1" href="#">Math</a></li>
-            <li><a tabindex="-1" href="#">Physics</a></li>      
+             <ul class="dropdown-menu font-color" role="menu" aria-labelledby="dropdownMenu">
+
+              <?php  $dept="Art";?>  
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Art </a>
+                  <?php  $dept="Computer Science";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Computer Science</a>
+                  <?php  $dept="Math";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Math </a>
+                  <?php  $dept="Economics";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Economics </a>
+                  <?php  $dept="Physics";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Physics </a>
             </ul>
           </li>
         </ul>

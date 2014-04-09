@@ -1,3 +1,34 @@
+
+<?php
+       ini_set('display_errors', 'On');
+
+       $db = "w4111g.cs.columbia.edu:1521/adb";
+      if (!($conn = oci_connect("rw2485", "Data132", $db))){
+            echo "Connection cannot be established";
+      }
+      $email = $_GET['email'];
+      $password = $_GET['password'];
+      $stmt = oci_parse($conn, "SELECT username from students where studentemail ='$email'");
+      oci_execute($stmt, OCI_DEFAULT);  
+        $i=0;
+         while ($profile = oci_fetch_row($stmt)){    
+               echo $profile[$i];
+                $username = $profile[$i];
+            }
+
+        //$student_id = oci_parse($conn, "SELECT StudentId from Students where studentemail = '$email'");
+        $student_history = oci_parse($conn, "SELECT TutName From ((Select TutId
+                                      From ((Select StudentId, StudentName
+                                          From Students Where studentemail= '$email') T1
+                                              Join
+                                            (Select TutId, StudentId From Watched) T2 On T1.StudentId=T2.StudentId))X1
+                                              Join
+                                                Taught_By X2 On X1.TutId=X2.TutId)");
+      oci_execute($student_history, OCI_DEFAULT);  
+      
+?>  
+
+
 <html>
 <head>
 	<title>Viducate</title>
@@ -8,74 +39,60 @@
 
 </head>
 <body>
+    <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%;">
+      <button type="button" class="btn btn-default">Welcome <strong><?php echo $username; ?> </strong></button>    
+    </div>
+    <!-- logged in as -->
 <div class="" style="margrin:50%; padding:5%;">
     
-<h1 class="font-color"><a href="index.php">Viducate</a></h1>    
+  <h1 class="font-color"><a href="index.php">Viducate</a></h1>    
  	  	 <div class="navbar">
         <ul class="nav navbar-nav navbar-position" style="margin-left:0%;	">
           <li><a href="index.php" class="font-color">Home</a></li>
           <li class= "dropdown">
-            <a href="#" class="dropdown-toggle font-color" data-toggle="dropdown">Departments <span class="caret"></span></a>
-            <ul class="dropdown-menu font-color" role="menu" aria-labelledby="dropdownMenu">
-              <li><a tabindex="-1" href="#">Art</a></li>
-              <li><a tabindex="-1" href="#">Computer Science</a></li>
-              <li><a tabindex="-1" href="#">Economics</a></li>
-            <li><a tabindex="-1" href="#">Math</a></li>
-            <li><a tabindex="-1" href="#">Physics</a></li>      
-            </ul>
-          </li>
-        </ul>
-    
-           
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search Subject, Topic ..">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-      </form>
-    			</li>
-    		</ul>
-		</div>
-  </div>
+            <a href="#" class="dropdown-toggle font-color" data-toggle="dropdown">Departments<span class="caret"></span></a>
+             <ul class="dropdown-menu font-color" role="menu" aria-labelledby="dropdownMenu">
+
+              <?php  $dept="Art";?>  
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Art </a>
+                  <?php  $dept="Computer Science";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Computer Science</a>
+                  <?php  $dept="Math";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Math </a>
+                  <?php  $dept="Economics";?>
+                <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Economics </a>
+                    <?php  $dept="Physics";?>
+                    <li> <?php echo '<a tabindex="-1" href="subject.php?id=' . $dept . '">'; ?> Physics </a>
+                      </ul>
+                    </li>
+                  </ul>
+              
+                     
+                <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search Subject, Topic ..">
+                  </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+    			       </li>
+    		    </ul>
+		    </div>
+    </div>
+    <!-- end of navigation inculding search bar -->
 
    <div style="width:305px; height:223px; margin-left:50px; margin-right:0px; boarder">
-            <h3 class= "font-color">Watch History</h3>
-        <tr style="width:305px; ">
-          <td><p>Indroduction to Calculus</p></td>
-          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
-          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-          <td>13226</td>
-        </tr>
-        <tr>
-          <td><p>Indroduction to Calculus</p></td>
-          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
-          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-          <td>13226</td>
-        </tr>
-        <tr>
-          <td><p>Indroduction to Calculus</p></td>
-          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
-          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-          <td>13226</td>
-        </tr>
-        <tr>
-          <td><p>Indroduction to Calculus</p></td>
-          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
-          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-          <td>13226</td>
-        </tr>
-        <tr>
-          <td><p>Indroduction to Calculus</p></td>
-          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
-          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-          <td>13226</td>
-        </tr>
-        <tr>
-          <td><p>Indroduction to Calculus</p></td>
-          <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
-          <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-          <td>13226</td>
-        </tr>
+            <h3 class= "font-color">Watch History   </h3>
+
+            <?php   $k=0;
+         while ($watched_history = oci_fetch_row($student_history)){    ?>
+                
+                <tr style="width:305px; ">
+                  <td><p><?php echo $watched_history[$k]; ?></p></td>
+                  <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
+                  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+                  <td>13226</td>
+                </tr>
+            <?php $k+1;} ?>
               </div>
       <div  style="background-color:blue; width:305px; height:223px; margin-left:50px; float:right; margin-top:0px;"> 
 

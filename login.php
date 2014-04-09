@@ -1,3 +1,15 @@
+<?php
+       ini_set('display_errors', 'On');
+
+       $db = "w4111g.cs.columbia.edu:1521/adb";
+      if (!($conn = oci_connect("rw2485", "Data132", $db))){
+            echo "Connection cannot be established";
+      }
+        
+       $stmt = oci_parse($conn, "select * from Departments");
+       oci_execute($stmt, OCI_DEFAULT);  
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +25,7 @@
     <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
     <link href="_/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="_/css/mystyles.css" rel="stylesheet" media="screen">
-  </head><link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+  
 
     <!-- Custom styles for this template -->
 
@@ -29,18 +41,16 @@
 
   <body>
 
-    <div class="container" style="padding-left:50% width:30px; padding-top:20%;">
+    <div class="container" style= " width:600px; padding-top:10%;">
 
-      <form class="form-signin put-color" role="form" > 
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
+      <form class="form-signin put-color" role="form" method="get" action="student-profile.php"> 
+        <input type="email" class="form-control" name="email" placeholder="Email" required autofocus>
+        <input type="password" class="form-control" name="password" placeholder="Password" required>
         <label class="checkbox">
           <!-- <input type="checkbox" style="color:white;"value="remember-me"> Remember me -->
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" name="signin"type="submit">Sign in</button>
       </form>
-
     </div> <!-- /container -->
 
 
