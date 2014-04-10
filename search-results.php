@@ -1,10 +1,5 @@
-<?php 
-	$video_link = "ZiZx1HKE3UE";
- ?>
-
-
-
 <?php
+      session_start();
        ini_set('display_errors', 'On');
        $db = "w4111g.cs.columbia.edu:1521/adb";
 
@@ -33,9 +28,6 @@ Taught_By B On A.TutId=B.TutId)
 Order By Views Desc" );
       oci_execute($stmt);
       oci_close($conn);
-
-
-
 ?>       
   
 
@@ -51,6 +43,21 @@ Order By Views Desc" );
     <link href="_/css/mystyles.css" rel="stylesheet" media="screen">
 </head>
 <body id="home" class="main-container">
+     <?php  if(isset($_SESSION['username']))  { ?>
+     
+      <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 70%; padding-top: 3%;">
+        <button type="button" class="btn btn-default">Welcome <strong><?php echo $_SESSION['username']; ?> </strong></button>    
+         <button type="button" class="btn btn-default" onclick="location.href='logout.php'" >Log Out</button>
+      </div>     
+   
+     <?php  }else{  ?>
+
+      <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%;">
+        <button type="button" class="btn btn-default" onclick="location.href='login.php'">Log In</button>
+        <button type="button" class="btn btn-default" onclick="location.href='signup.php'" >Sign up</button>
+      </div>
+                   
+    <?php } ?> 
 
 
 <div class="" style="margrin:50%; padding:5%;">
@@ -97,20 +104,18 @@ Order By Views Desc" );
 	<h1  style="color:white;">Searched for  "<?php print_r($search_string); ?>" </h1>
 	<p  style="color:white; margin-left:90%; content-align:right;">Views</p>
   <tr>
-  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-  <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
-  <td>13226</td>
-  </tr>
-          <?php  $i =0;
-            while ($courses = oci_fetch_row($stmt)){   ?>
-          <tr>
-            <td><?php echo $courses[$i]; ?></td>
-            <td><button type="button" class="btn btn-primary">Like</button><button type="button" class="btn btn-danger">Dislike</button></td> 
-            <td>13226</td>
-          </tr>
-          <?php } $i++; ?>
-    
+    <?php 
+            while ($courses = oci_fetch_row($stmt)){   $i =0; ?>
+              <?php print_r($courses) ?>
+             <tr style="width:305px; ">
+                  <td><p><?php  echo $courses[$i++]; ?></p></td>
+                  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $courses[$i++]; ?>"></iframe></td>
+                  <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
+                  <td><p><?php  echo $courses[$i]; ?></p></td>
+                </tr>
+          <?php } ?>
 
+    </tr>
 </table>
 
 </div>

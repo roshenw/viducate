@@ -1,4 +1,5 @@
 <?php
+      session_start();
        ini_set('display_errors', 'On');
        $db = "w4111g.cs.columbia.edu:1521/adb";
 
@@ -17,7 +18,6 @@
                                   Join
                                   Linked_to_Tutorials On A.TutId=Linked_to_Tutorials.TutId)");
 
-
        oci_execute($stmt);
        oci_close($conn);
        
@@ -33,8 +33,22 @@
 
 </head>
 <body>
-<div class="" style="margrin:50%; padding:5%;">
+<?php  if(isset($_SESSION['username']))  { ?>
+      <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 70%; padding-top: 3%;">
+        <button type="button" class="btn btn-default">Welcome <strong><?php echo $_SESSION['username']; ?> </strong></button>    
+         <button type="button" class="btn btn-default" onclick="location.href='logout.php'" >Log Out</button>
+      </div>     
+     <?php  }else{  ?>
+
+      <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%;">
+        <button type="button" class="btn btn-default" onclick="location.href='login.php'">Log In</button>
+        <button type="button" class="btn btn-default" onclick="location.href='signup.php'" >Sign up</button>
+      </div>
+                   
+    <?php } ?> 
     
+  
+<div class="" style="margrin:50%; padding:5%;">  
     <h1 class="font-color"><a href="index.php">Viducate</a></h1>
     
  	  	 <div class="navbar">
@@ -128,61 +142,7 @@
   </div>
 </div>
 </form>
-
-
-
-
-
-<!-- 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/
-libs/jquery/1.3.0/jquery.min.js">
-</script>
-<script type="text/javascript" >
-$(function() {
-$(".submit").click(function() {
-var name = $("#tut-name").val();
-var tag = $("#tag-name").val();
-var dataString = 'tut-name='+ name + '&tag-name=' + tag;
-
-
-if(name=='' || tag=='')
-{
-$('.success').fadeOut(200).hide();
-$('.error').fadeOut(200).show();
-}
-else
-{
-$.ajax({
-type: "POST",
-url: "tutorials.php",
-data: dataString,
-success: function(){
-$('.success').fadeIn(200).show();
-$('.error').fadeOut(200).hide();
-}
-});
-}
-return false;
-});
-});
-</script>
- -->
-
-
-<?php
-
-/*
-if($_POST)
-{
-$name=$_POST['tut-name'];
-$username=$_POST['tag-name'];
-
-$adding = oci_parse("INSERT Into Taught_By Values ("ADS0099", "AS98765", '$name', 0, 0)");
-}else { }
-
- oci_execute($adding, OCI_DEFAULT);
-*/
-?>
+<!-- end of adding new tutorial -->
 
 
 <script src="_/js/bootstrap.js"></script>

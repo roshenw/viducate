@@ -1,5 +1,6 @@
 
 <?php
+      session_start();
        ini_set('display_errors', 'On');
        $db = "w4111g.cs.columbia.edu:1521/adb";
       if (!($conn = oci_connect("rw2485", "Data132", $db))){
@@ -23,6 +24,21 @@
 
 </head>
 <body>
+     <?php  if(isset($_SESSION['username']))  { ?>
+      
+      <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 70%; padding-top: 3%;">
+        <button type="button" class="btn btn-default">Welcome <strong><?php echo $_SESSION['username']; ?> </strong></button>    
+         <button type="button" class="btn btn-default" onclick="location.href='logout.php'" >Log Out</button>
+      </div>     
+    
+     <?php  }else{  ?>
+
+      <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%;">
+        <button type="button" class="btn btn-default" onclick="location.href='login.php'">Log In</button>
+        <button type="button" class="btn btn-default" onclick="location.href='signup.php'" >Sign up</button>
+      </div>
+                   
+    <?php } ?> 
 
 <div class="" style="margrin:50%; padding:5%; padding-bottom:1%;">
     

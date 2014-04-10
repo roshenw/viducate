@@ -1,5 +1,5 @@
 <?php
-
+       session_start();
        ini_set('display_errors', 'On');
 
        $db = "w4111g.cs.columbia.edu:1521/adb";
@@ -10,7 +10,6 @@
        $stmt = oci_parse($conn, "select * from Departments");
        oci_execute($stmt, OCI_DEFAULT); 
        oci_close($conn); 
-
 ?>
 
 <!DOCTYPE html>
