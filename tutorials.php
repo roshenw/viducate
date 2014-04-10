@@ -7,14 +7,22 @@
       }
       $tutorial = $_GET["tutorial"];
       
-     $stmt = oci_parse($conn, "SELECT TutName From((Select TutId From Has_Tutorial
-                                                    Where TopicId In 
-                                                            (Select TopicId From Has_Topic Where TopicName= '". $tutorial ."')) T1
-                               Join
-                              Taught_By On T1.TutId=Taught_By.TutId)");
-       oci_execute($stmt, OCI_DEFAULT);
-?>  
+     $stmt = oci_parse($conn, "SELECT TutName, Link, Views From((
+                                  Select T1.TutId, TutName, Views
+                                  From((Select TutId
+                                  From Has_Tutorial
+                    Where TopicId In (Select TopicId From Has_Topic Where TopicName='$tutorial'))T1
+                                      Join
+                                    Taught_By On T1.TutId=Taught_By.TutId))A
+                                  Join
+                                  Linked_to_Tutorials On A.TutId=Linked_to_Tutorials.TutId)");
 
+
+       oci_execute($stmt);
+       oci_close($conn);
+       
+?>  
+ 
 <html>
 <head>
 	<title>Viducate</title>
@@ -71,12 +79,12 @@
           <?php  $i =0;
             while ($courses = oci_fetch_row($stmt)){   ?>
              <tr style="width:305px; ">
-                  <td><p><?php echo $courses[$i]; ?></p></td>
-                  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
+                  <td><p><?php  echo $courses[$i++]; ?></p></td>
+                  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $courses[$i++]; ?>"></iframe></td>
                   <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
-                  <td>13226</td>
+                  <td><p><?php ; echo $courses[$i++]; ?></p></td>
                 </tr>
-          <?php } $i++; ?>
+          <?php } ?>
       </table>  
     </div>
 
@@ -84,28 +92,32 @@
 <!-- end of table  -->
 </div>
 
-<div class="btn-group " style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%; color:w">
+<div class="btn-group " style=" position: relative; padding-right: 0px; padding-left: 29%; padding-top: 3%; color:w">
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add tutorial to to this topic</button>
 </div> 
 <!-- add new tutorial -->
 
-<form    method="get" action="tutorials.php">
+<form    method="get" action="add-tutorial.php">
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
         <h4 class="modal-title" id="myModalLabel">Add a New Tutorial</h4>
       </div>
       <div class="modal-body">
           <div class="input-group">
               <span class="input-group-addon">Tutorial</span>
-              <input type="text" class="form-control" name="tutorial-name" placeholder="Tutorial name">
+              <input name="tut-name" type="text" class="form-control" placeholder="Tutorial name">
           </div>
           <div class="input-group">
               <span class="input-group-addon" style="width:6em;">Tag </span>
-              <input type="text" class="form-control" name ="tag"placeholder="Tag">
+              <input name="tag-name" type="text" class="form-control" placeholder="Tag">
+          </div>
+           <div class="input-group">
+              <span class="input-group-addon" style="width:6em;">Video Link </span>
+              <input name="vid-link" type="text" class="form-control" placeholder="Tag">
           </div>
       </div>
       <div class="modal-footer">
@@ -116,14 +128,61 @@
   </div>
 </div>
 </form>
-<?php 
-      $tutorial_name = $_GET["tutorial-name"];
-      $tag = $_GET["tag"];
-      
-     $add_tutorial = oci_parse($conn,"INSERT Into Taught_By Values ($TEACHERID, $TUTID$, $TUTNAME$, 0, ?)");
-       oci_execute($add_tutorial, OCI_DEFAULT);
-  
- ?>
+
+
+
+
+
+<!-- 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/
+libs/jquery/1.3.0/jquery.min.js">
+</script>
+<script type="text/javascript" >
+$(function() {
+$(".submit").click(function() {
+var name = $("#tut-name").val();
+var tag = $("#tag-name").val();
+var dataString = 'tut-name='+ name + '&tag-name=' + tag;
+
+
+if(name=='' || tag=='')
+{
+$('.success').fadeOut(200).hide();
+$('.error').fadeOut(200).show();
+}
+else
+{
+$.ajax({
+type: "POST",
+url: "tutorials.php",
+data: dataString,
+success: function(){
+$('.success').fadeIn(200).show();
+$('.error').fadeOut(200).hide();
+}
+});
+}
+return false;
+});
+});
+</script>
+ -->
+
+
+<?php
+
+/*
+if($_POST)
+{
+$name=$_POST['tut-name'];
+$username=$_POST['tag-name'];
+
+$adding = oci_parse("INSERT Into Taught_By Values ("ADS0099", "AS98765", '$name', 0, 0)");
+}else { }
+
+ oci_execute($adding, OCI_DEFAULT);
+*/
+?>
 
 
 <script src="_/js/bootstrap.js"></script>

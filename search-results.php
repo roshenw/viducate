@@ -27,11 +27,12 @@ From ((Select TagId
 Union
 Select TutId
 From Taught_By
-Where TutName Like '%$search_string'))A
+Where TutName Like '%$search_string%'))A
 Join
 Taught_By B On A.TutId=B.TutId)
 Order By Views Desc" );
-      oci_execute($stmt, OCI_DEFAULT);
+      oci_execute($stmt);
+      oci_close($conn);
 
 
 
@@ -115,7 +116,6 @@ Order By Views Desc" );
 </div>
 <!-- end of table	 -->
 </div>
-
 <script src="_/js/bootstrap.js"></script>
 <script src="_/js/myscript.js"></script>
 </body>

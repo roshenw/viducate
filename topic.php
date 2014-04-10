@@ -8,7 +8,8 @@
       $topic = $_GET["topic"];
       //$topic = "Calculus I";
       $stmt = oci_parse($conn, "SELECT topicname From Has_topic, has_course where has_course.coursename = '$topic' and has_course.courseid = Has_topic.courseid");
-      oci_execute($stmt, OCI_DEFAULT);
+      oci_execute($stmt);
+      oci_close($conn);
 ?>       
 <html>
 <head>
@@ -68,7 +69,6 @@
   </div>
 
 
-  
 <script src="_/js/bootstrap.js"></script>
   <script src="_/js/myscript.js"></script>
 </body>

@@ -7,7 +7,8 @@
             echo "Connection cannot be established";
       }
        $stmt = oci_parse($conn, "select * from Departments");
-       oci_execute($stmt, OCI_DEFAULT);  
+       oci_execute($stmt);
+      oci_close($conn); 
 ?>       
 
 <!DOCTYPE html>
@@ -20,15 +21,24 @@
     <link href="_/css/mystyles.css" rel="stylesheet" media="screen">
   </head>
   <body  id="home">
-    <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%;">
-      <button type="button" class="btn btn-default" onclick="location.href='login.php'">Log In</button>
-      <button type="button" class="btn btn-default" onclick="location.href='signup.php'" >Sign up</button>
 
-    </div>
+   <?php  if(isset($_SESSION['username']))  { ?>
+      <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%;">
+        <button type="button" class="btn btn-default">Welcome <strong><?php echo $_SESSION['username']; ?> </strong></button>    
+      </div>     
+     <?php  }else{  ?>
+
+      <div class="btn-group" style=" position: relative; padding-right: 0px; padding-left: 85%; padding-top: 3%;">
+        <button type="button" class="btn btn-default" onclick="location.href='login.php'">Log In</button>
+        <button type="button" class="btn btn-default" onclick="location.href='signup.php'" >Sign up</button>
+      </div>
+                   
+    <?php } ?> 
+    
   <div class="put-color main-container"> 
         
      <div class="logo">
-      <h1 class="font-color nounderline" style="margin:5%";>Viducate  </h1>
+      <h1 class="font-color nounderline" style="margin:5%";>Viducate  <?php// print_r($_SESSION['username']);?></h1>
     </div>
     <div class="navbar">
         <ul class="nav navbar-nav navbar-position">

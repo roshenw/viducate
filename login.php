@@ -1,4 +1,5 @@
 <?php
+
        ini_set('display_errors', 'On');
 
        $db = "w4111g.cs.columbia.edu:1521/adb";
@@ -7,7 +8,8 @@
       }
         
        $stmt = oci_parse($conn, "select * from Departments");
-       oci_execute($stmt, OCI_DEFAULT);  
+       oci_execute($stmt, OCI_DEFAULT); 
+       oci_close($conn); 
 
 ?>
 
@@ -43,7 +45,7 @@
 
     <div class="container" style= " width:600px; padding-top:10%;">
 
-      <form class="form-signin put-color" role="form" method="get" action="student-profile.php"> 
+      <form class="form-signin put-color" role="form" method="post" action="student-profile.php"> 
         <input type="email" class="form-control" name="email" placeholder="Email" required autofocus>
         <input type="password" class="form-control" name="password" placeholder="Password" required>
         <label class="checkbox">
@@ -52,7 +54,6 @@
         <button class="btn btn-lg btn-primary btn-block" name="signin"type="submit">Sign in</button>
       </form>
     </div> <!-- /container -->
-
 
   <script src="_/js/bootstrap.js"></script>
   <script src="_/js/myscript.js"></script>

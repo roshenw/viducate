@@ -1,13 +1,17 @@
-
 <?php
+    session_start();
        ini_set('display_errors', 'On');
 
        $db = "w4111g.cs.columbia.edu:1521/adb";
       if (!($conn = oci_connect("rw2485", "Data132", $db))){
             echo "Connection cannot be established";
       }
-      $email = $_GET['email'];
-      $password = $_GET['password'];
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      $_SESSION['email'] = $email;
+      $_SESSION['password'] = $password;
+
+
       $stmt = oci_parse($conn, "SELECT username from students where studentemail ='$email'");
       oci_execute($stmt, OCI_DEFAULT);  
         $i=0;
@@ -22,32 +26,43 @@
               header("Location: login-user-not-found.php");
               //die();
             }
-
+        $_SESSION['username'] =$username;
 
         //$student_id = oci_parse($conn, "SELECT StudentId from Students where studentemail = '$email'");
-        $student_history = oci_parse($conn, "SELECT TutName From ((Select TutId
-                                      From ((Select StudentId, StudentName
-                                          From Students Where studentemail= '$email') T1
-                                              Join
-                                            (Select TutId, StudentId From Watched) T2 On T1.StudentId=T2.StudentId))X1
-                                              Join
-                                                Taught_By X2 On X1.TutId=X2.TutId)");
+        $student_history = oci_parse($conn, "SELECT TutName, Link, Views From((
+                                        Select X1.TutId,TutName,Views
+From ((Select TutId
+  From ((Select StudentId, StudentName
+    From Students
+    Where studentemail='$email') T1
+    Join
+    (Select TutId, StudentId
+      From Watched
+      Where Liked=1) T2 On T1.StudentId=T2.StudentId))X1
+  Join
+  Taught_By On X1.TutId=Taught_By.TutId))A
+  Join
+  Linked_to_Tutorials On A.TutId=Linked_to_Tutorials.TutId)");
       oci_execute($student_history, OCI_DEFAULT);     
 
 
 
-    $student_liked = oci_parse($conn, "SELECT TutName
-                                      From ((Select TutId
-                                        From ((Select StudentId, StudentName
-                                          From Students
-                                          Where studentemail='$email') T1
-                                          Join
-                                          (Select TutId, StudentId
-                                            From Watched
-                                            Where Liked=1) T2 On T1.StudentId=T2.StudentId))X1
-                                        Join
-                                        Taught_By X2 On X1.TutId=X2.TutId)");
-      oci_execute($student_liked, OCI_DEFAULT);       
+    $student_liked = oci_parse($conn, "SELECT TutName, Link, Views
+From((
+Select X1.TutId, TutName, Views
+From ((Select TutId
+  From ((Select StudentId, StudentName
+    From Students
+    Where studentemail='$email') T1
+    Join
+    (Select TutId, StudentId
+      From Watched) T2 On T1.StudentId=T2.StudentId))X1
+  Join
+  Taught_By X2 On X1.TutId=X2.TutId))A
+  Join
+  Linked_to_Tutorials On A.TutId=Linked_to_Tutorials.TutId)");
+      oci_execute($student_liked, OCI_DEFAULT);  
+      oci_close($conn);     
 ?>  
 
 
@@ -109,16 +124,16 @@
    <!--<div style="width:305px; height:223px; margin-left:50px; margin-right:0px; boarder">-->
             <h3 class= "font-color">Watch History   </h3>
             <table>
-            <?php   $k=0;
-         while ($watched_history = oci_fetch_row($student_history)){    ?>
+            <?php   
+         while ($watched_history = oci_fetch_row($student_history)){   $k=0; ?>
                 
                 <tr style="width:305px; ">
-                  <td><p><?php echo $watched_history[$k]; ?></p></td>
+                  <td><p><?php echo $watched_history[$k]; $k++; ?></p></td>
                   <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
-                  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-                  <td>13226</td>
-                </tr>
-            <?php $k+1;} ?>
+                  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $watched_history[$k]; $k++; ?>"></iframe></td>
+                  <td><p>Views <?php echo $watched_history[$k]; ?></p></td>
+                </tr> 
+            <?php   $k++; }  ?>
             </table>
     <!---</div>-->
     </td>
@@ -127,14 +142,14 @@
     <!--<div  style="background-color:blue; width:305px; height:223px; margin-left:50px; valign="top" float:right; margin-top:0px;"> -->
         <h3 class="front-color">Liked History</h3>
         <table>
- <?php   $s=0;
-         while ($liked_history = oci_fetch_row($student_liked)){    ?>
+ <?php   
+         while ($liked_history = oci_fetch_row($student_liked)){  $s=0;  ?>
                 
                 <tr style="width:305px; ">
-                  <td><p><?php echo $liked_history[$k]; ?></p></td>
+                  <td><p><?php echo $liked_history[$s++]; ?></p></td>
                   <td><button type="button" class="btn btn-primary" style="float:right;">Like</button><button type="button" class="btn btn-danger" style="float:right;">Dislike</button></td> 
-                  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $video_link ?>"></iframe></td>
-                  <td>13226</td>
+                  <td><iframe class="vid-container" src="http://www.youtube.com/embed/<?php echo $liked_history[$s++];  ?>"></iframe></td>
+                  <td><p><?php echo $liked_history[$s];  ?></p></td>
                 </tr>
             <?php $s+1;} ?>
         </table>
@@ -143,7 +158,6 @@
 </tr>
 </table>
 </div>
-
       <script src="_/js/bootstrap.js"></script>
   <script src="_/js/myscript.js"></script>
 </body>

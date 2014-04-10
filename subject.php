@@ -8,6 +8,7 @@
       $subject = $_GET["id"];
       $stmt = oci_parse($conn, "SELECT CourseName From Has_Course, Departments Where Departments.depname = '$subject' and Has_Course.depid = Departments.depid" );
       oci_execute($stmt, OCI_DEFAULT);
+      oci_close($conn);
 ?>       
 
 
@@ -76,7 +77,6 @@
   
 <!-- end of table  -->
 </div>
-
 <script src="_/js/bootstrap.js"></script>
   <script src="_/js/myscript.js"></script>
 
